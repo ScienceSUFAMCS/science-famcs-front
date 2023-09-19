@@ -1,0 +1,40 @@
+@import '@taiga-ui/core/styles/taiga-ui-local.scss';
+* {
+    margin: 0;
+    padding: 0;
+}
+
+tui-app-bar {
+    @include shadow(6);
+    height: fit-content;
+}
+
+.logo-figure {
+    width: 80px;
+    height: 80px;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 100%;
+}
+
+.left_side {
+    @include tui-space(left, 5);
+}
+
+.right_side {
+    @include tui-space(right, 5);
+}
+
+.space_right {
+    @include tui-space(right, 3);
+}
+
+.space_left {
+    @include tui-space(left, 3);
+}
