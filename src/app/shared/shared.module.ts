@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
-import { TuiButtonModule, TuiSvgModule } from '@taiga-ui/core';
+import { TuiButtonModule, TuiModeModule, TuiSvgModule, TuiThemeNightModule } from '@taiga-ui/core';
 import { TuiAppBarModule } from '@taiga-ui/addon-mobile';
 import { FooterComponent } from './footer/footer.component';
 import { TuiLinkModule } from '@taiga-ui/core'
@@ -17,7 +17,9 @@ import { TuiLinkModule } from '@taiga-ui/core'
     TuiButtonModule,
     TuiSvgModule,
     TuiAppBarModule,
-    TuiLinkModule
+    TuiLinkModule,
+    TuiThemeNightModule,
+    TuiModeModule
   ],
   exports: [
     HeaderComponent,
