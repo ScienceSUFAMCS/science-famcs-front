@@ -7,6 +7,8 @@
 tui-app-bar {
     @include shadow(6);
     height: fit-content;
+    padding: 4px 0;
+    border-bottom: 1px solid var(--tui-base-03);
 }
 
 .logo {
