@@ -1,0 +1,14 @@
+<button tuiIconButton icon="tuiIconMenuLarge" type="button" appearance="mono" (click)="toggle(true)"
+    (tuiActiveZoneChange)="toggle($event)">
+    <div *tuiSidebar="open; direction: 'right'" class="left-top_side">
+        <div class="container">
+            <span class="menu-title">Меню</span>
+            <button tuiIconButton icon="tuiIconXLarge" type="button" appearance="mono" (click)="toggle(false)"></button>
+        </div>
+
+        <a *ngFor="let link of pages" href="{{ link.path }}" icon="{{ link.icon }}" iconAlign="left" tuiLink
+            class="link">
+            {{ link.name }}
+        </a>
+    </div>
+</button>
