@@ -4,13 +4,17 @@ import { HeaderComponent } from './header/header.component';
 import { TuiButtonModule, TuiModeModule, TuiSvgModule, TuiThemeNightModule } from '@taiga-ui/core';
 import { TuiAppBarModule } from '@taiga-ui/addon-mobile';
 import { FooterComponent } from './footer/footer.component';
-import { TuiLinkModule } from '@taiga-ui/core'
+import { TuiLinkModule } from '@taiga-ui/core';
+import { SidebarComponent } from './header/sidebar/sidebar.component'
+import { TuiSidebarModule } from '@taiga-ui/addon-mobile';
+import { TuiActiveZoneModule } from '@taiga-ui/cdk';
 
 
 @NgModule({
   declarations: [
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    SidebarComponent
   ],
   imports: [
     CommonModule,
@@ -19,7 +23,9 @@ import { TuiLinkModule } from '@taiga-ui/core'
     TuiAppBarModule,
     TuiLinkModule,
     TuiThemeNightModule,
-    TuiModeModule
+    TuiModeModule,
+    TuiSidebarModule,
+    TuiActiveZoneModule
   ],
   exports: [
     HeaderComponent,

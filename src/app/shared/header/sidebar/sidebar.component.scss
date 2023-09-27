@@ -1,0 +1,25 @@
+@import '@taiga-ui/core/styles/taiga-ui-local.scss';
+
+.menu-title {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.link {
+    display: block;
+    margin: 0.75rem 0;
+    font-size: 1.1rem;
+}
+
+.left-top_side {
+    @include tui-space(left, 4);
+    @include tui-space(top, 3);
+}
+
+.container {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+}
