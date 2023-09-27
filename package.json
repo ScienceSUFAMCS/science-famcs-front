@@ -7,7 +7,18 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "lint": "ng lint"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged --relative"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts}": [
+      "eslint --fix"
+    ]
   },
   "private": true,
   "dependencies": {
@@ -41,13 +52,21 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^16.0.1",
+    "@angular-eslint/builder": "16.2.0",
+    "@angular-eslint/eslint-plugin": "16.2.0",
+    "@angular-eslint/eslint-plugin-template": "16.2.0",
+    "@angular-eslint/schematics": "16.2.0",
+    "@angular-eslint/template-parser": "16.2.0",
     "@angular/cli": "^16.2.2",
     "@angular/compiler-cli": "^16.0.0",
     "@commitlint/cli": "^17.7.1",
     "@commitlint/config-conventional": "^17.7.0",
     "@types/dompurify": "2.2.3",
     "@types/jasmine": "~4.3.0",
-    "husky": "^8.0.0",
+    "@typescript-eslint/eslint-plugin": "5.62.0",
+    "@typescript-eslint/parser": "5.62.0",
+    "eslint": "^8.49.0",
+    "husky": "^8.0.3",
     "jasmine-core": "~4.6.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
