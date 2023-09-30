@@ -10,12 +10,12 @@ export class SidebarComponent {
 
   readonly pages = [
     { name: 'На главную', icon: 'tuiIconSmile', path: 'main/general' },
-    { name: 'О нас', icon: 'tuiIconSmile', path: 'main/' },
-    { name: 'Плюшки', icon: 'tuiIconCoffee', path: 'main/' },
-    { name: 'Мероприятия', icon: 'tuiIconCalendar', path: 'main/' },
-    { name: 'Занятия', icon: 'tuiIconBookOpen', path: 'main/' },
-    { name: 'Присоединиться к нам', icon: 'tuiIconHeart', path: 'main/' },
-    { name: 'Архив', icon: 'tuiIconFolder', path: 'main/' },
+    { name: 'О нас', icon: 'tuiIconSmile', path: 'main/about' },
+    { name: 'Плюшки', icon: 'tuiIconCoffee', path: 'main/search' },
+    { name: 'Мероприятия', icon: 'tuiIconCalendar', path: 'main/event' },
+    { name: 'Занятия', icon: 'tuiIconBookOpen', path: 'main/classes' },
+    { name: 'Присоединиться к нам', icon: 'tuiIconHeart', path: 'main/application' },
+    { name: 'Архив', icon: 'tuiIconFolder', path: 'main/archive' },
   ];
 
   toggle(open: boolean) {
