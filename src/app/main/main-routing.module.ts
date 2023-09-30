@@ -31,6 +31,10 @@ const routes: Routes = [
         loadChildren: () => import('./modules/additional-classes/additional-classes.module').then((m) => m.AdditionalClassesModule),
       },
       {
+        path: 'application',
+        loadChildren: () => import('./modules/application-to-science/application-to-science.module').then((m) => m.ApplicationToScienceModule),
+      },
+      {
         path: '**',
         redirectTo: 'general',
       },
