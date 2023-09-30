@@ -19,6 +19,10 @@ const routes: Routes = [
         loadChildren: () => import('./modules/about/about.module').then((m) => m.AboutModule),
       },
       {
+        path: 'search-buns',
+        loadChildren: () => import('./modules/search-buns/search-buns.module').then((m) => m.SearchBunsModule),
+      },
+      {
         path: '**',
         redirectTo: 'general',
       },
