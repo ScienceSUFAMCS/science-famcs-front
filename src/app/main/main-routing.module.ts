@@ -27,6 +27,10 @@ const routes: Routes = [
         loadChildren: () => import('./modules/events-info/events-info.module').then((m) => m.EventsInfoModule),
       },
       {
+        path: 'classes',
+        loadChildren: () => import('./modules/additional-classes/additional-classes.module').then((m) => m.AdditionalClassesModule),
+      },
+      {
         path: '**',
         redirectTo: 'general',
       },
