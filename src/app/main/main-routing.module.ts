@@ -35,6 +35,10 @@ const routes: Routes = [
         loadChildren: () => import('./modules/application-to-science/application-to-science.module').then((m) => m.ApplicationToScienceModule),
       },
       {
+        path: 'archive',
+        loadChildren: () => import('./modules/archive/archive.module').then((m) => m.ArchiveModule),
+      },
+      {
         path: '**',
         redirectTo: 'general',
       },
