@@ -23,6 +23,10 @@ const routes: Routes = [
         loadChildren: () => import('./modules/search-buns/search-buns.module').then((m) => m.SearchBunsModule),
       },
       {
+        path: 'event',
+        loadChildren: () => import('./modules/events-info/events-info.module').then((m) => m.EventsInfoModule),
+      },
+      {
         path: '**',
         redirectTo: 'general',
       },
