@@ -19,7 +19,7 @@ const routes: Routes = [
         loadChildren: () => import('./modules/about/about.module').then((m) => m.AboutModule),
       },
       {
-        path: 'search-buns',
+        path: 'search',
         loadChildren: () => import('./modules/search-buns/search-buns.module').then((m) => m.SearchBunsModule),
       },
       {
