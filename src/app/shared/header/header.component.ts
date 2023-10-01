@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ThemeService } from './service/theme.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -8,7 +9,7 @@ import { ThemeService } from './service/theme.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderComponent {
-  constructor(private themeService : ThemeService) {
+  constructor(private themeService : ThemeService, private router: Router) {
 
   }
 
@@ -22,5 +23,9 @@ export class HeaderComponent {
 
   public changeTheme() : void {
     this.themeService.changeTheme();
+  }
+
+  public onAccountClick() : void {
+    this.router.navigate(['/account/login'])
   }
 }
