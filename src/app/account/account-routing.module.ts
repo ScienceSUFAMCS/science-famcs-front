@@ -13,9 +13,9 @@ const routes : Routes = [
         component: RegisterComponent,
     },
     {
-        path: '**',
-        redirectTo: 'main/general',
-        pathMatch: "full"
+        path: '',
+        redirectTo: '/main/general',
+        pathMatch: 'full',
     },
 ];
 
