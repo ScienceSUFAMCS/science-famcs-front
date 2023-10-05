@@ -15,6 +15,30 @@ const routes: Routes = [
           ),
       },
       {
+        path: 'about',
+        loadChildren: () => import('./modules/about/about.module').then((m) => m.AboutModule),
+      },
+      {
+        path: 'search',
+        loadChildren: () => import('./modules/search-buns/search-buns.module').then((m) => m.SearchBunsModule),
+      },
+      {
+        path: 'event',
+        loadChildren: () => import('./modules/events-info/events-info.module').then((m) => m.EventsInfoModule),
+      },
+      {
+        path: 'classes',
+        loadChildren: () => import('./modules/additional-classes/additional-classes.module').then((m) => m.AdditionalClassesModule),
+      },
+      {
+        path: 'application',
+        loadChildren: () => import('./modules/application-to-science/application-to-science.module').then((m) => m.ApplicationToScienceModule),
+      },
+      {
+        path: 'archive',
+        loadChildren: () => import('./modules/archive/archive.module').then((m) => m.ArchiveModule),
+      },
+      {
         path: '**',
         redirectTo: 'general',
       },
