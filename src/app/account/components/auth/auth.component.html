@@ -1,1 +1,41 @@
-<p>Hey! This is authenticatino component!</p>
+<form class="famcs-form">
+    <div class="form">
+        <h3 class="tui-form__header center">Войти в аккаунт</h3>
+        <div class="famcs-input-container">
+            <tui-input
+                class="famcs-text-input"
+                tuiHintContent="Введите ваше имя"
+                >
+                Почта 
+                <input tuiTextfield/>
+            </tui-input>
+        </div>              
+    
+        <div class="famcs-input-container">
+            <tui-input-password
+                class="famcs-text-input"
+                tuiHintContent="Пароль"
+                >
+                Пароль
+                <input tuiTextfield/>
+            </tui-input-password>
+        </div>
+
+        <div class="famcs-input-container center">
+            <button
+                        class="form-button"
+                        size="m"
+                        tuiButton
+                        type="submit"
+                        appearance="primary"
+                    >
+                        Войти
+                    </button>
+        </div>
+        <div class="caption center">
+            <p class="tui-text_body-s">
+                Нет аккаунта? <a tuiLink href="/account/register"> Зарегестрироваться</a>
+            </p>
+        </div>
+    </div>
+</form>
