@@ -5,7 +5,8 @@ import { AccountRoutingModule } from './account-routing.module';
 import { AuthComponent } from './components/auth/auth.component';
 import { RegisterComponent } from './components/register/register.component';
 import { TuiInputModule, TuiInputPasswordModule } from '@taiga-ui/kit';
-import { TuiButtonModule, TuiLinkModule } from '@taiga-ui/core';
+import { TuiButtonModule, TuiLinkModule, TuiTextfieldControllerModule } from '@taiga-ui/core';
+import { TuiRadioLabeledModule, TuiInputPhoneInternationalModule } from '@taiga-ui/kit';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,9 @@ import { TuiButtonModule, TuiLinkModule } from '@taiga-ui/core';
     TuiInputPasswordModule, 
     TuiButtonModule, 
     TuiLinkModule,
+    TuiRadioLabeledModule,
+    TuiInputPhoneInternationalModule,
+    TuiTextfieldControllerModule
   ]
 })
 export class AccountModule { }

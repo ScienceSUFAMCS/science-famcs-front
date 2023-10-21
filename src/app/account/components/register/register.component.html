@@ -1,1 +1,109 @@
-<p>Hey! This is register component!</p>
+<form class="famcs-form" [formGroup]="registerFormGroup">
+    <div class="register-form">
+        <h3 class="tui-form__header center">Регистрация</h3>
+        <div class="form-fields_grid_container">
+            <div class="input_item">
+                <tui-input
+                    class="width100 famcs-text-input"
+                    tuiHintContent="Введите ваше имя"
+                >
+                    Имя 
+                <input tuiTextfield/>
+                <span class="tui-required"></span>
+                </tui-input>
+            </div>
+            <div class="input_item">
+                <tui-input
+                    class="width100 famcs-text-input"
+                    tuiHintContent="Введите вашу фамилию"
+                >
+                    Фамилия 
+                <input tuiTextfield/>
+                <span class="tui-required"></span>
+                </tui-input>
+            </div>  
+            <div class="columns-count-2 sex_input">
+                <div class="sex_input-block">
+                    <p class="default_form_font">Пол<span class="tui-required"></span> :</p>
+                </div>
+                <div class="sex_input-block">
+                    <tui-radio-labeled
+                        formControlName="sexInput"
+                        item="Мужской"
+                        size="l"
+                    >
+                        Мужской
+                    </tui-radio-labeled>
+                </div>
+                <div class="sex_input-block">
+                    <tui-radio-labeled
+                        formControlName="sexInput"
+                        item="Женский"
+                        size="l"
+                    >
+                        Женский
+                    </tui-radio-labeled>
+                </div>
+            </div>
+            <div class="input_item">
+                <tui-input-phone-international
+                    formControlName="phone"
+                    [countries]="contries"
+                    [(countryIsoCode)]="countruIsoCode"
+                    [tuiTextfieldLabelOutside]="true"
+                >
+                    Номер телефона
+                </tui-input-phone-international>
+            </div>
+            <div class="input_item">
+                <tui-input
+                    class="width100 famcs-text-input"
+                    tuiHintContent="Введите вашу почту"
+                >
+                    Почта
+                <input tuiTextfield/>
+                </tui-input>
+            </div>
+            <div class="input_item">
+                <tui-input
+                class="width100 famcs-text-input"
+                tuiHintContent="Введите вашу почту"
+                >
+                    Логин
+                <input tuiTextfield/>
+                <span class="tui-required"></span>
+                </tui-input>
+            </div>
+            <div class="input_item">
+                <tui-input-password
+                    class="famcs-text-input"
+                    tuiHintContent="Пароль"
+                    >
+                    Пароль
+                    <input tuiTextfield/>
+                    <span class="tui-required"></span>
+                </tui-input-password>
+            </div>
+            <div class="input_item">
+                <tui-input-password
+                    class="famcs-text-input"
+                    tuiHintContent="Пароль"
+                    >
+                    Повторите пароль
+                    <input tuiTextfield/>
+                    <span class="tui-required"></span>
+                </tui-input-password>
+            </div>
+            <div class="input_item submit_button">
+                <button
+                    size="l"
+                    tuiButton
+                    type="submit"
+                    appearance="primary"
+                >
+                    Зарегесрироваться
+                </button>
+            </div>
+        </div>
+    </div>
+</form>
