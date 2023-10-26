@@ -13,6 +13,7 @@
                 <span class="tui-required"></span>
                 </tui-input>
                 <tui-error
+                    formControlName="firstName"
                     [error]="[] | tuiFieldError | async"
                 ></tui-error>
             </div>
@@ -27,6 +28,7 @@
                 <span class="tui-required"></span>
                 </tui-input>
                 <tui-error
+                    formControlName="lastName"
                     [error]="[] | tuiFieldError | async"
                 ></tui-error>
             </div>  
@@ -40,6 +42,7 @@
                 <input tuiTextfield/>
                 </tui-input>
                 <tui-error
+                    formControlName="patronymic"
                     [error]="[] | tuiFieldError | async"
                 ></tui-error>
             </div>  
@@ -54,6 +57,7 @@
                 <span class="tui-required"></span>
                 </tui-input>
                 <tui-error
+                    formControlName="login"
                     [error]="[] | tuiFieldError | async"
                 ></tui-error>
             </div>
@@ -68,6 +72,7 @@
                     <span class="tui-required"></span>
                 </tui-input-password>
                 <tui-error
+                    formControlName="password"
                     [error]="[] | tuiFieldError | async"
                 ></tui-error>
             </div>
@@ -82,6 +87,7 @@
                     <span class="tui-required"></span>
                 </tui-input-password>
                 <tui-error
+                    formControlName="repeatPassword"
                     [error]="[] | tuiFieldError | async"
                 ></tui-error>
             </div>
