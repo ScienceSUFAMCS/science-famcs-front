@@ -7,7 +7,8 @@ import { RegisterComponent } from './components/register/register.component';
 import { TuiInputModule, TuiInputPasswordModule } from '@taiga-ui/kit';
 import { TuiButtonModule, TuiLinkModule, TuiTextfieldControllerModule } from '@taiga-ui/core';
 import { TuiRadioLabeledModule, TuiInputPhoneInternationalModule } from '@taiga-ui/kit';
-
+import { TuiFieldErrorPipeModule } from '@taiga-ui/kit';
+import { TuiErrorModule } from '@taiga-ui/core';
 @NgModule({
   declarations: [
     AuthComponent,
@@ -23,7 +24,9 @@ import { TuiRadioLabeledModule, TuiInputPhoneInternationalModule } from '@taiga-
     TuiLinkModule,
     TuiRadioLabeledModule,
     TuiInputPhoneInternationalModule,
-    TuiTextfieldControllerModule
+    TuiTextfieldControllerModule,
+    TuiFieldErrorPipeModule,
+    TuiErrorModule,
   ]
 })
 export class AccountModule { }
