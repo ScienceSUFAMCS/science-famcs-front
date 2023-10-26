@@ -1,4 +1,4 @@
-<form class="famcs-form" [formGroup]="registerFormGroup">
+<form class="famcs-form" [formGroup]="registerForm">
     <div class="register-form">
         <h3 class="tui-form__header center">Регистрация</h3>
         <div class="form-fields_grid_container">
@@ -6,93 +6,84 @@
                 <tui-input
                     class="width100 famcs-text-input"
                     tuiHintContent="Введите ваше имя"
+                    formControlName="firstName"
                 >
                     Имя 
                 <input tuiTextfield/>
                 <span class="tui-required"></span>
                 </tui-input>
+                <tui-error
+                    [error]="[] | tuiFieldError | async"
+                ></tui-error>
             </div>
             <div class="input_item">
                 <tui-input
                     class="width100 famcs-text-input"
                     tuiHintContent="Введите вашу фамилию"
+                    formControlName="lastName"
                 >
                     Фамилия 
                 <input tuiTextfield/>
                 <span class="tui-required"></span>
                 </tui-input>
+                <tui-error
+                    [error]="[] | tuiFieldError | async"
+                ></tui-error>
             </div>  
-            <div class="columns-count-2 sex_input">
-                <div class="sex_input-block">
-                    <p class="default_form_font">Пол<span class="tui-required"></span> :</p>
-                </div>
-                <div class="sex_input-block">
-                    <tui-radio-labeled
-                        formControlName="sexInput"
-                        item="Мужской"
-                        size="l"
-                    >
-                        Мужской
-                    </tui-radio-labeled>
-                </div>
-                <div class="sex_input-block">
-                    <tui-radio-labeled
-                        formControlName="sexInput"
-                        item="Женский"
-                        size="l"
-                    >
-                        Женский
-                    </tui-radio-labeled>
-                </div>
-            </div>
-            <div class="input_item">
-                <tui-input-phone-international
-                    formControlName="phone"
-                    [countries]="contries"
-                    [(countryIsoCode)]="countruIsoCode"
-                    [tuiTextfieldLabelOutside]="true"
-                >
-                    Номер телефона
-                </tui-input-phone-international>
-            </div>
             <div class="input_item">
                 <tui-input
                     class="width100 famcs-text-input"
-                    tuiHintContent="Введите вашу почту"
+                    tuiHintContent="Введите вашу фамилию"
+                    formControlName="patronymic"
                 >
-                    Почта
+                    Отчество 
                 <input tuiTextfield/>
                 </tui-input>
-            </div>
+                <tui-error
+                    [error]="[] | tuiFieldError | async"
+                ></tui-error>
+            </div>  
             <div class="input_item">
                 <tui-input
                 class="width100 famcs-text-input"
                 tuiHintContent="Введите вашу почту"
+                formControlName="login"
                 >
                     Логин
                 <input tuiTextfield/>
                 <span class="tui-required"></span>
                 </tui-input>
+                <tui-error
+                    [error]="[] | tuiFieldError | async"
+                ></tui-error>
             </div>
             <div class="input_item">
                 <tui-input-password
                     class="famcs-text-input"
                     tuiHintContent="Пароль"
+                    formControlName="password"
                     >
                     Пароль
                     <input tuiTextfield/>
                     <span class="tui-required"></span>
                 </tui-input-password>
+                <tui-error
+                    [error]="[] | tuiFieldError | async"
+                ></tui-error>
             </div>
             <div class="input_item">
                 <tui-input-password
                     class="famcs-text-input"
                     tuiHintContent="Пароль"
+                    formControlName="repeatPassword"
                     >
                     Повторите пароль
                     <input tuiTextfield/>
                     <span class="tui-required"></span>
                 </tui-input-password>
+                <tui-error
+                    [error]="[] | tuiFieldError | async"
+                ></tui-error>
             </div>
             <div class="input_item submit_button">
                 <button
