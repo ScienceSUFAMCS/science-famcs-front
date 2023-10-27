@@ -5,7 +5,7 @@ import { AccountRoutingModule } from './account-routing.module';
 import { AuthComponent } from './components/auth/auth.component';
 import { RegisterComponent } from './components/register/register.component';
 import { TuiInputModule, TuiInputPasswordModule } from '@taiga-ui/kit';
-import { TuiButtonModule, TuiLinkModule, TuiTextfieldControllerModule } from '@taiga-ui/core';
+import { TuiButtonModule, TuiHintModule, TuiLinkModule, TuiTextfieldControllerModule } from '@taiga-ui/core';
 import { TuiRadioLabeledModule, TuiInputPhoneInternationalModule } from '@taiga-ui/kit';
 import { TuiFieldErrorPipeModule } from '@taiga-ui/kit';
 import { TuiErrorModule } from '@taiga-ui/core';
@@ -27,6 +27,7 @@ import { TuiErrorModule } from '@taiga-ui/core';
     TuiTextfieldControllerModule,
     TuiFieldErrorPipeModule,
     TuiErrorModule,
+    TuiHintModule,
   ]
 })
 export class AccountModule { }
