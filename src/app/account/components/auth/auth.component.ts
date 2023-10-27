@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { TUI_VALIDATION_ERRORS } from '@taiga-ui/kit';
+import { SubmitFormService } from 'src/app/shared/service/submit-form.service';
 
 @Component({
   selector: 'app-auth',
@@ -20,6 +21,10 @@ import { TUI_VALIDATION_ERRORS } from '@taiga-ui/kit';
 export class AuthComponent implements OnInit {
  loginForm: FormGroup;
 
+ constructor(private submitFormService : SubmitFormService) {
+
+ }
+
   ngOnInit(): void {
     this.loginForm = new FormGroup({
       login: new FormControl('', [Validators.required]),
@@ -28,6 +33,6 @@ export class AuthComponent implements OnInit {
   }
 
   onSubmit() : void {
-    console.log(this.loginForm.value);
+    this.submitFormService.submitForm(this.loginForm);
   }
 }

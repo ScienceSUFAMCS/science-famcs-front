@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { TUI_VALIDATION_ERRORS } from '@taiga-ui/kit';
+import { SubmitFormService } from 'src/app/shared/service/submit-form.service';
 import { matchValidator } from 'src/app/shared/validators/match.validator';
 
 @Component({
@@ -26,6 +27,10 @@ export class RegisterComponent implements OnInit {
   passwordRegExp = new RegExp(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).*$/);
   loginRegExp = new RegExp(/^[a-zA-Z0-9_]+$/);
 
+  constructor(private submitFormService : SubmitFormService) {
+
+  }
+
   ngOnInit(): void {
     this.registerForm = new FormGroup({
       firstName : new FormControl('', [Validators.required, Validators.minLength(2), Validators.maxLength(60)]),
@@ -39,6 +44,6 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit() : void {
-    console.log(this.registerForm.value);
+    this.submitFormService.submitForm(this.registerForm);
   }
 }
