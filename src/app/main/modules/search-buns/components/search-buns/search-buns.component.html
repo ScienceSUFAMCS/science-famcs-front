@@ -1,1 +1,21 @@
 <p>You can take buns from a shelf</p>
+
+
+<form class="form" [formGroup]="filterForm">
+    <div class="flexbox">
+        <tui-input class="input-search" tuiTextfieldIconLeft="tuiIconSearchLarge" [(ngModel)]="search">
+            Поиск
+            <input tuiTextfield />
+        </tui-input>
+
+        <button icon="tuiIconSearch" tuiIconButton type="button" class="tui-space_left-3"></button>
+    </div>
+
+    <tui-filter class="tui-space_top-3"
+        formControlName="filters"
+        size="s"
+        [items]="items"
+        >
+    </tui-filter>
+
+</form>

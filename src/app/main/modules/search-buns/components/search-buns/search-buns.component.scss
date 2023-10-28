@@ -1,0 +1,18 @@
+@import '@taiga-ui/core/styles/taiga-ui-local.scss';
+
+.flexbox {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.input-search {
+    width: 100%;
+}
+
+.tui-space_top-3 {
+    @include tui_space(top, 3);
+}
+
+.tui-space_left-3 {
+    @include tui_space(left, 3);
+}
