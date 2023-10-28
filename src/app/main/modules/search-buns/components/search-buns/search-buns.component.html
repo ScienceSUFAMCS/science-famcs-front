@@ -2,7 +2,7 @@
 
 
 <form class="form" [formGroup]="filterForm">
-    <div class="flexbox">
+    <div class="flexbox-nowrap">
         <tui-input class="input-search" tuiTextfieldIconLeft="tuiIconSearchLarge" [(ngModel)]="search">
             Поиск
             <input tuiTextfield />
@@ -11,11 +11,14 @@
         <button icon="tuiIconSearch" tuiIconButton type="button" class="tui-space_left-3"></button>
     </div>
 
-    <tui-filter class="tui-space_top-3"
-        formControlName="filters"
-        size="s"
-        [items]="items"
-        >
+    <tui-filter class="tui-space_top-3" formControlName="filters" size="s" [items]="items">
     </tui-filter>
 
 </form>
+
+<div class="flexbox-wrap tui-space_top-6">
+    <button *ngFor="let subject of subjects" class="card tui-space_top-3" style.background="{{ subject.color }}">
+        <h3 class="heading">{{ subject.name }}</h3>
+        <div class="content">{{ subject.description }}</div>
+    </button>
+</div>

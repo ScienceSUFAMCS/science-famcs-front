@@ -1,18 +1,65 @@
 @import '@taiga-ui/core/styles/taiga-ui-local.scss';
 
-.flexbox {
+.flexbox-nowrap {
     display: flex;
     flex-wrap: nowrap;
 }
 
 .input-search {
-    width: 100%;
+    width: 25rem;
+}
+
+.flexbox-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -5px;
+}
+
+.card {
+    height: 7rem;
+    width: calc(1/4*100% - 10px);
+    text-align: left;
+    font: var(--tui-font-text-xs);
+    border: none;
+    border-radius: 1.25rem;
+    margin: 5px;
+    padding: 1rem;
+    cursor: pointer;
+    transition: 1s ease;
+
+    .heading {
+        font: var(--tui-font-text-l);
+        color: var(--tui-text-01-night);
+        font-weight: bold;
+        margin: -0.125rem 0 0;
+    }
+ 
+    .content {
+        height: 3rem;
+        color: var(--tui-text-01-night);
+    }
+ 
+    &:hover {
+        transform: scale(1.03);
+    }
+ 
+    &:active:before {
+        backdrop-filter: brightness(0.9);
+    }
 }
 
 .tui-space_top-3 {
     @include tui_space(top, 3);
 }
 
+.tui-space_top-6 {
+    @include tui_space(top, 6);
+}
+
 .tui-space_left-3 {
     @include tui_space(left, 3);
+}
+
+.tui-space_right-3 {
+    @include tui_space(right, 3);
 }
