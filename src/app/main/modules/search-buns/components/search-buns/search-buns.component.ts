@@ -10,10 +10,6 @@ import { FormControl, FormGroup } from '@angular/forms';
 export class SearchBunsComponent {
   search = ''
 
-  filterForm = new FormGroup({
-    filters: new FormControl(['Конспекты', 'Методички', 'Книги', 'Другое'])
-  });
-
   readonly items = [
     'Конспекты',
     'Методички',
@@ -21,13 +17,26 @@ export class SearchBunsComponent {
     'Другое'
   ];
 
+  filterForm = new FormGroup({
+    filters: new FormControl(this.items)
+  });
+
   readonly subjects = [
-    { name: 'ДМиМЛ', description: 'Дискретная математика и математическая логика', color: 'var(--tui-support-05)' },
-    { name: 'МО', description: 'Методы оптимизации', color: 'var(--tui-support-02)' },
-    { name: 'ОВАиАГ', description: 'чё-то там и аналитическая геометрия', color: 'var(--tui-support-10)' },
-    { name: 'Англ', description: 'Английский язык', color: 'var(--tui-support-16)' },
-    { name: 'АиСД', description: 'Алгоритмы и структуры данных', color: 'var(--tui-support-14)' },
-    { name: 'ДиИИ', description: 'МА в простонародье', color: 'var(--tui-support-16)' },
+    { name: 'ДМиМЛ', description: 'Дискретная математика и математическая логика' },
+    { name: 'МО', description: 'Методы оптимизации' },
+    { name: 'ОВАиАГ', description: 'чё-то там и аналитическая геометрия' },
+    { name: 'Англ', description: 'Английский язык' },
+    { name: 'АиСД', description: 'Алгоритмы и структуры данных' },
+    { name: 'ДиИИ', description: 'МА в простонародье' },
+    { name: 'МатМод', description: 'Математическое моделирование' },
   ];
+
+  colors = [
+    'var(--tui-support-05)',
+    'var(--tui-support-02)',
+    'var(--tui-support-10)',
+    'var(--tui-support-16)',
+    'var(--tui-support-14)'
+  ]
 
 }

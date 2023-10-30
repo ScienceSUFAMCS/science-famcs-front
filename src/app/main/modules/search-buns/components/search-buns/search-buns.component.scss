@@ -1,5 +1,9 @@
 @import '@taiga-ui/core/styles/taiga-ui-local.scss';
 
+p {
+    color: var(--tui-text-02);
+}
+
 .flexbox-nowrap {
     display: flex;
     flex-wrap: nowrap;
@@ -54,6 +58,10 @@
 
 .tui-space_top-6 {
     @include tui_space(top, 6);
+}
+
+.tui-space_top-9 {
+    @include tui_space(top, 9);
 }
 
 .tui-space_left-3 {
