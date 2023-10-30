@@ -1,0 +1,44 @@
+.form-fields_grid_container {
+    display: grid;
+    grid-template-columns: 1fr;
+    column-gap: 20px;
+    row-gap: 20px;
+}
+
+.register-form {
+    width: 60%;
+}
+
+.sex_input {
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.sex_input-block {
+    display: flex;
+    align-items: center;
+    margin-left: 1rem;
+}
+
+.sex_input-block:first-child {
+    margin: 0;
+}
+
+.default_form_font {
+    color: var(--tui-text-01);
+    font: var(--tui-font-text-m);
+}
+
+.sex_input-name {
+    margin-left: 0.5rem;
+}
+
+tui-radio-labeled {
+    display: flex;
+    align-items: center;
+}
+
+.submit_button {
+    text-align: center;
+}

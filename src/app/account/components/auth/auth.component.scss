@@ -1,0 +1,38 @@
+:host {
+    display: flex;
+    justify-content: center;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.center {
+    text-align: center;
+}
+
+.famcs-form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.famcs-text-input {
+    max-width: 100%;
+    min-width: 10rem;
+}
+
+.famcs-input-container {
+    margin: 20px 0;
+}
+
+.famcs-input-container:last-child {
+    margin-bottom: 0;
+}
+
+.form {
+    width: 18rem;
+    min-width: 10rem;
+}
+
+.form-button {
+    width: 8rem;
+}
