@@ -16,7 +16,7 @@ import { matchValidator } from 'src/app/shared/validators/match.validator';
         required: 'Это поле является обязательным',
         minlength: ({requiredLength} : {requiredLength : string}) => `Минимальная длина строки ${requiredLength} символа`,
         maxlength: ({requiredLength} : {requiredLength : string}) => `Максимальная длина строки ${requiredLength} символов`,
-        pattern: () => 'Поле заполнено не верно',
+        pattern: () => 'Поле заполнено неверно',
       }
     }
   ],
