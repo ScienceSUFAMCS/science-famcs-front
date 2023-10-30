@@ -2,7 +2,10 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SearchBunsRoutingModule } from './search-buns-routing.module';
 import { SearchBunsComponent } from './components/search-buns/search-buns.component';
-
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {TuiInputModule} from '@taiga-ui/kit';
+import {TuiGroupModule, TuiButtonModule, TuiSvgModule} from '@taiga-ui/core';
+import {TuiFilterModule} from '@taiga-ui/kit';
 
 
 @NgModule({
@@ -11,7 +14,14 @@ import { SearchBunsComponent } from './components/search-buns/search-buns.compon
   ],
   imports: [
     CommonModule,
-    SearchBunsRoutingModule
+    SearchBunsRoutingModule,
+    ReactiveFormsModule,
+    TuiInputModule,
+    FormsModule,
+    TuiGroupModule,
+    TuiSvgModule,
+    TuiButtonModule,
+    TuiFilterModule,
   ]
 })
 export class SearchBunsModule { }
