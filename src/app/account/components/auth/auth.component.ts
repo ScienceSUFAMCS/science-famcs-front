@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { TUI_VALIDATION_ERRORS } from '@taiga-ui/kit';
 import { SubmitFormService } from 'src/app/shared/service/submit-form.service';
@@ -18,19 +18,15 @@ import { SubmitFormService } from 'src/app/shared/service/submit-form.service';
 ],
 })
 
-export class AuthComponent implements OnInit {
- loginForm: FormGroup;
+export class AuthComponent {
+ loginForm: FormGroup = new FormGroup({
+  login: new FormControl('', [Validators.required]),
+  password: new FormControl('', [Validators.required]),
+});
 
  constructor(private submitFormService : SubmitFormService) {
 
  }
-
-  ngOnInit(): void {
-    this.loginForm = new FormGroup({
-      login: new FormControl('', [Validators.required]),
-      password: new FormControl('', [Validators.required]),
-    });
-  }
 
   onSubmit() : void {
     this.submitFormService.submitForm(this.loginForm);
