@@ -10,7 +10,7 @@ p {
 }
 
 .input-search {
-    width: 25rem;
+    width: 15rem;
 }
 
 .flexbox-wrap {
@@ -29,7 +29,7 @@ p {
     margin: 5px;
     padding: 1rem;
     cursor: pointer;
-    transition: 1s ease;
+    transition: 0.3s ease;
 
     .heading {
         font: var(--tui-font-text-l);
