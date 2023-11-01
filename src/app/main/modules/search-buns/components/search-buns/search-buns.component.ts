@@ -23,21 +23,16 @@ export class SearchBunsComponent implements OnInit {
     'Другое'
   ];
 
-  SearchForm: FormGroup = new FormGroup({
+  searchForm: FormGroup = new FormGroup({
     subject: new FormControl(),
     name: new FormControl(),
     author: new FormControl(),
-    filter: new FormGroup({
-      filters: new FormControl(this.items)
-    })
+    filters: new FormControl([])
   })
 
   searchData: QueryFile[] =[];
-  constructor(private searchDataService: SearchDataService) { }
+  ngOnInit(): void {  }
 
-  ngOnInit() {
-    this.searchData = this.searchDataService.getData();
-  }
 
   readonly subjects = [
     { name: 'ДМиМЛ', description: 'Дискретная математика и математическая логика' },
@@ -58,7 +53,7 @@ export class SearchBunsComponent implements OnInit {
   ]
 
   onSubmit(): void {
-    alert('поиск не работает :(')
+    console.log(this.searchForm.value)
   }
 
 }

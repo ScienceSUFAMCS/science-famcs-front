@@ -1,28 +1,25 @@
 <h1 class="tui-space_top-9">Плюшки</h1>
 <p class="tui-space_top-6">Тут найдётся всё самое полезное по предметам</p>
 
-<form class="form tui-space_top-3" [formGroup]="SearchForm" (ngSubmit)="onSubmit()">
+<form class="form tui-space_top-3" [formGroup]="searchForm" (ngSubmit)="onSubmit()">
     <div class="flexbox-nowrap">
-        <tui-input formControlName="subject" class="input-search" [(ngModel)]="subject">
+        <tui-input formControlName="subject" class="input-search">
             Предмет
             <input tuiTextfield />
         </tui-input>
-        <tui-input formControlName="name" class="input-search tui-space_left-3" [(ngModel)]="name">
+        <tui-input formControlName="name" class="input-search tui-space_left-3">
             Название
             <input tuiTextfield />
         </tui-input>
-        <tui-input formControlName="author" class="input-search tui-space_left-3" [(ngModel)]="author">
+        <tui-input formControlName="author" class="input-search tui-space_left-3">
             Автор
             <input tuiTextfield />
         </tui-input>
 
         <button icon="tuiIconSearch" tuiIconButton type="submit" class="tui-space_left-3"> </button>
     </div>
-    <div FormGroupName="filter">
-        <tui-filter tuiMode="onLight" class="tui-space_top-3" formControlName="filters" size="s"
-            [items]="items">
-        </tui-filter>
-    </div>
+    <tui-filter tuiMode="onLight" class="tui-space_top-3" formControlName="filters" size="s" [items]="items">
+    </tui-filter>
 </form>
 
 <div class="flexbox-wrap tui-space_top-6">
