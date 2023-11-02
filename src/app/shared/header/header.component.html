@@ -5,8 +5,54 @@
         <h1 class="tui-text_h3 space_left logo_text">Science FAMCS</h1>
     </div>
     <div class="row right_side" tuiSlot="right">
-        <button tuiIconButton icon="tuiIconUserLarge" type="button" appearance="mono" class="space_right" (click)="onAccountClick()">
+        <button tuiIconButton 
+                icon="tuiIconUserLarge" 
+                type="button" appearance="mono" 
+                class="space_right" 
+                tuiDropdownHover 
+                [tuiDropdown]="userButtonDropDown"
+                tuiDropdownAlign='center'>
         </button>
+        <ng-template 
+            #userButtonDropDown
+            >
+                <div class="tui-space__right-1 tui-space__left-1 tui-space__top-1 tui-space__bottom-1">
+                    <div class="column-center" *ngIf="!loggedIn; else loggedInBlock">
+                        <button 
+                            class="block"
+                            tuiButton
+                            size='s'
+                            appearance="mono">
+                            Вход
+                        </button>
+                        <button
+                            class="block"
+                            tuiButton
+                            size="s"
+                            appearance="mono">
+                            Регистрация
+                        </button>
+                    </div>
+                    <ng-template #loggedInBlock>
+                        <div class="column-center">
+                            <button 
+                                class="block"
+                                tuiButton
+                                size='s'
+                                appearance="mono">
+                                Профиль
+                            </button>
+                            <button
+                                class="block"
+                                tuiButton
+                                size="s"
+                                appearance="mono">
+                                Выйти
+                            </button>
+                        </div>
+                    </ng-template>
+                </div>
+        </ng-template>
         <button tuiIconButton [icon]="getTheme()" type="button" appearance="mono" class="space_right" (click)="changeTheme()">
         </button>
         <app-sidebar></app-sidebar>

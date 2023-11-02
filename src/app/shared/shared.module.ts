@@ -8,6 +8,7 @@ import { TuiLinkModule } from '@taiga-ui/core';
 import { SidebarComponent } from './header/sidebar/sidebar.component'
 import { TuiSidebarModule } from '@taiga-ui/addon-mobile';
 import { TuiActiveZoneModule } from '@taiga-ui/cdk';
+import { TuiDropdownModule } from '@taiga-ui/core';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { TuiActiveZoneModule } from '@taiga-ui/cdk';
     TuiThemeNightModule,
     TuiModeModule,
     TuiSidebarModule,
-    TuiActiveZoneModule
+    TuiActiveZoneModule,
+    TuiDropdownModule,
   ],
   exports: [
     HeaderComponent,

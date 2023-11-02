@@ -9,8 +9,14 @@ import { Router } from '@angular/router';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderComponent {
+  loggedIn : boolean;
+  
   constructor(private themeService : ThemeService, private router: Router) {
-
+    if (localStorage.getItem("ScienceFamcsToken")) {
+      this.loggedIn = true;
+    } else {
+      this.loggedIn = false;
+    }
   }
 
   public getTheme() : string {
