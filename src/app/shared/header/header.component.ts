@@ -28,7 +28,19 @@ export class HeaderComponent {
     this.themeService.changeTheme();
   }
 
-  public onAccountClick() : void {
+  public onLoginClick() : void {
     this.router.navigate(['/account/login'])
+  }
+
+  public onRegisterClick() : void {
+    this.router.navigate(['/account/register']);
+  }
+
+  public onLogOutClick() : void {
+    throw new Error("Not implemented");
+  }
+
+  public onProfileClick() : void {
+      throw new Error('Not implemented');
   }
 }

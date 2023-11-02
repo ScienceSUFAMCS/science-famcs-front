@@ -22,14 +22,18 @@
                             class="block"
                             tuiButton
                             size='s'
-                            appearance="mono">
+                            appearance="mono"
+                            (click)="onLoginClick()"
+                            >
                             Вход
                         </button>
                         <button
                             class="block"
                             tuiButton
                             size="s"
-                            appearance="mono">
+                            appearance="mono"
+                            (click)="onRegisterClick()"
+                            >
                             Регистрация
                         </button>
                     </div>
@@ -39,14 +43,18 @@
                                 class="block"
                                 tuiButton
                                 size='s'
-                                appearance="mono">
+                                appearance="mono"
+                                (click)="onProfileClick()"
+                                >
                                 Профиль
                             </button>
                             <button
                                 class="block"
                                 tuiButton
                                 size="s"
-                                appearance="mono">
+                                appearance="mono"
+                                (click)="onLogOutClick()"
+                                >
                                 Выйти
                             </button>
                         </div>
