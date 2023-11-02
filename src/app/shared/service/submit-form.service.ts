@@ -6,8 +6,6 @@ import { FormGroup } from '@angular/forms';
 })
 
 export class SubmitFormService {
-  constructor() { }
-
   public submitForm(form : FormGroup) : void {
     if (!form) return;
   
