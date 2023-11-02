@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ThemeService } from './service/theme.service';
 import { Router } from '@angular/router';
+import { UserInfoService } from '../service/user-info.service';
 
 @Component({
   selector: 'app-header',
@@ -11,12 +12,8 @@ import { Router } from '@angular/router';
 export class HeaderComponent {
   loggedIn : boolean;
   
-  constructor(private themeService : ThemeService, private router: Router) {
-    if (localStorage.getItem("ScienceFamcsToken")) {
-      this.loggedIn = true;
-    } else {
-      this.loggedIn = false;
-    }
+  constructor(private themeService : ThemeService, private userInfoService : UserInfoService, private router: Router) {
+    this.loggedIn = userInfoService.isLoggedIn();
   }
 
   public getTheme() : string {
