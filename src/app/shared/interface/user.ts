@@ -12,4 +12,3 @@ export interface User {
     readonly is_active: boolean;
     readonly role: string;
 }
-
