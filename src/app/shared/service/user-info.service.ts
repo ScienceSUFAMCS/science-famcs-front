@@ -22,4 +22,8 @@ export class UserInfoService {
     
     return undefined;
   }
+
+  logOut() : void {
+    localStorage.removeItem('ScienceFamcsToken');
+  }
 }
