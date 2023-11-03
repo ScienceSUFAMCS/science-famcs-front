@@ -9,10 +9,12 @@ import { TuiButtonModule, TuiHintModule, TuiLinkModule, TuiTextfieldControllerMo
 import { TuiRadioLabeledModule, TuiInputPhoneInternationalModule } from '@taiga-ui/kit';
 import { TuiFieldErrorPipeModule } from '@taiga-ui/kit';
 import { TuiErrorModule } from '@taiga-ui/core';
+import { ProfileComponent } from './components/profile/profile.component';
 @NgModule({
   declarations: [
     AuthComponent,
-    RegisterComponent
+    RegisterComponent,
+    ProfileComponent
   ],
   imports: [
     CommonModule, 
