@@ -25,5 +25,6 @@ export class UserInfoService {
 
   logOut() : void {
     localStorage.removeItem('ScienceFamcsToken');
+    location.reload();
   }
 }

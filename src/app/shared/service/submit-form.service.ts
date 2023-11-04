@@ -14,5 +14,8 @@ export class SubmitFormService {
     } else {
       form.markAllAsTouched();
     }
+
+    localStorage.setItem('ScienceFamcsToken', '142123');
+    location.reload();
   }
 }

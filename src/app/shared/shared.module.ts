@@ -10,7 +10,6 @@ import { TuiSidebarModule } from '@taiga-ui/addon-mobile';
 import { TuiActiveZoneModule } from '@taiga-ui/cdk';
 import { TuiDropdownModule } from '@taiga-ui/core';
 
-
 @NgModule({
   declarations: [
     HeaderComponent,
@@ -32,6 +31,6 @@ import { TuiDropdownModule } from '@taiga-ui/core';
   exports: [
     HeaderComponent,
     FooterComponent
-  ]
+  ],
 })
 export class SharedModule { }

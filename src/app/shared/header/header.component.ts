@@ -12,7 +12,10 @@ import { UserInfoService } from '../service/user-info.service';
 export class HeaderComponent {
   loggedIn : boolean;
   
-  constructor(private themeService : ThemeService, private userInfoService : UserInfoService, private router: Router) {
+  constructor(private themeService : ThemeService, 
+              private userInfoService : UserInfoService, 
+              private router: Router
+              ) {
     this.loggedIn = userInfoService.isLoggedIn();
   }
 
@@ -37,10 +40,11 @@ export class HeaderComponent {
   }
 
   public onLogOutClick() : void {
-    throw new Error("Not implemented");
+    this.userInfoService.logOut();
+    location.reload();
   }
 
   public onProfileClick() : void {
-      throw new Error('Not implemented');
+    this.router.navigate(['/account/profile'])
   }
 }
