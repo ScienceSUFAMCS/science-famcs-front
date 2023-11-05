@@ -9,18 +9,20 @@ export class UserInfoService {
     return (localStorage.getItem('ScienceFamcsToken') ? true : false);
   }
 
-  getUser() : User | undefined{
+  getUser() : User{
     if (this.isLoggedIn()) {
       return {
-        name: 'Stas',
-        surname: 'Zaycev',
+        name: 'Станислав',
+        surname: 'Зайцев',
         login: 'krollikroddzer',
         is_active: false,
-        role: 'Student',
+        role: 'Студент',
+        email: 'krollikroddzer@mail.ru',
+        telegram: '@KrollikRoddzer',
       };
     }
     
-    return undefined;
+    throw new Error("Cannot get user.")
   }
 
   logOut() : void {

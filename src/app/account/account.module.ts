@@ -4,12 +4,13 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AccountRoutingModule } from './account-routing.module';
 import { AuthComponent } from './components/auth/auth.component';
 import { RegisterComponent } from './components/register/register.component';
-import { TuiInputModule, TuiInputPasswordModule } from '@taiga-ui/kit';
+import { TuiAvatarModule, TuiInputModule, TuiInputPasswordModule } from '@taiga-ui/kit';
 import { TuiButtonModule, TuiHintModule, TuiLinkModule, TuiTextfieldControllerModule } from '@taiga-ui/core';
 import { TuiRadioLabeledModule, TuiInputPhoneInternationalModule } from '@taiga-ui/kit';
 import { TuiFieldErrorPipeModule } from '@taiga-ui/kit';
 import { TuiErrorModule } from '@taiga-ui/core';
 import { ProfileComponent } from './components/profile/profile.component';
+import { TuiTableModule } from '@taiga-ui/addon-table';
 @NgModule({
   declarations: [
     AuthComponent,
@@ -30,6 +31,8 @@ import { ProfileComponent } from './components/profile/profile.component';
     TuiFieldErrorPipeModule,
     TuiErrorModule,
     TuiHintModule,
+    TuiAvatarModule,
+    TuiTableModule,
   ]
 })
 export class AccountModule { }
