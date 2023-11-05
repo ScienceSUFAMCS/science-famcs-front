@@ -11,7 +11,7 @@ import { QueryFile } from 'src/app/shared/interface/query-file.interface';
   changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [SearchDataService]
 })
-export class SearchBunsComponent implements OnInit {
+export class SearchBunsComponent {
   subject = ''
   name = ''
   author = ''
@@ -31,9 +31,7 @@ export class SearchBunsComponent implements OnInit {
   })
 
   searchData: QueryFile[] =[];
-  ngOnInit(): void {  }
-
-
+  
   readonly subjects = [
     { name: 'ДМиМЛ', description: 'Дискретная математика и математическая логика' },
     { name: 'МО', description: 'Методы оптимизации' },
