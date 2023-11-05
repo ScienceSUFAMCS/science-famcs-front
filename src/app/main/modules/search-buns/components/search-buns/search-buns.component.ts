@@ -1,14 +1,20 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { SearchDataService } from './service/search-data.service';
+import { QueryFile } from 'src/app/shared/interface/query-file.interface';
+
 
 @Component({
   selector: 'app-search-buns',
   templateUrl: './search-buns.component.html',
   styleUrls: ['./search-buns.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  providers: [SearchDataService]
 })
 export class SearchBunsComponent {
-  search = ''
+  subject = ''
+  name = ''
+  author = ''
 
   readonly items = [
     'Конспекты',
@@ -17,10 +23,15 @@ export class SearchBunsComponent {
     'Другое'
   ];
 
-  filterForm = new FormGroup({
-    filters: new FormControl(this.items)
-  });
+  searchForm: FormGroup = new FormGroup({
+    subject: new FormControl(),
+    name: new FormControl(),
+    author: new FormControl(),
+    filters: new FormControl([])
+  })
 
+  searchData: QueryFile[] =[];
+  
   readonly subjects = [
     { name: 'ДМиМЛ', description: 'Дискретная математика и математическая логика' },
     { name: 'МО', description: 'Методы оптимизации' },
@@ -38,5 +49,9 @@ export class SearchBunsComponent {
     'var(--tui-support-16)',
     'var(--tui-support-14)'
   ]
+
+  onSubmit(): void {
+    console.log(this.searchForm.value)
+  }
 
 }

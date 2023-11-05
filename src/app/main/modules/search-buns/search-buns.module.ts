@@ -4,7 +4,7 @@ import { SearchBunsRoutingModule } from './search-buns-routing.module';
 import { SearchBunsComponent } from './components/search-buns/search-buns.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {TuiInputModule} from '@taiga-ui/kit';
-import {TuiGroupModule, TuiButtonModule, TuiSvgModule} from '@taiga-ui/core';
+import {TuiGroupModule, TuiButtonModule, TuiSvgModule, TuiModeModule} from '@taiga-ui/core';
 import {TuiFilterModule} from '@taiga-ui/kit';
 
 
@@ -22,6 +22,7 @@ import {TuiFilterModule} from '@taiga-ui/kit';
     TuiSvgModule,
     TuiButtonModule,
     TuiFilterModule,
+    TuiModeModule,
   ]
 })
 export class SearchBunsModule { }
