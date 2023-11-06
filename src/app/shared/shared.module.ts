@@ -14,7 +14,7 @@ import { TuiDropdownModule } from '@taiga-ui/core';
   declarations: [
     HeaderComponent,
     FooterComponent,
-    SidebarComponent
+    SidebarComponent,
   ],
   imports: [
     CommonModule,
@@ -30,7 +30,7 @@ import { TuiDropdownModule } from '@taiga-ui/core';
   ],
   exports: [
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
   ],
 })
 export class SharedModule { }
