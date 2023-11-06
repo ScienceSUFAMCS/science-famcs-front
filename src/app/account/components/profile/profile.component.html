@@ -28,11 +28,11 @@
                 <div class="info-content">
                     <div class="data-row">
                         <span class="table-data-heading">Почта</span>
-                        <p class="table-data">{{user.email | isUndefinedUserData}}</p>
+                        <p class="table-data">{{user.email | isNullOrIndefinedUserData}}</p>
                     </div>
                     <div class="data-row">
                         <span class="table-data-heading">Телеграм</span>
-                        <p class="table-data">{{user.telegram | isUndefinedUserData}}</p>
+                        <p class="table-data">{{user.telegram | isNullOrIndefinedUserData}}</p>
                     </div>
                 </div>
             </section>
@@ -50,15 +50,15 @@
                 <div class="info-content">
                     <div class="data-row">
                         <span class="table-data-heading">Факультет</span>
-                        <p class="table-data">{{user.faculty | isUndefinedUserData}}</p>
+                        <p class="table-data">{{user.faculty | isNullOrIndefinedUserData}}</p>
                     </div>
                     <div class="data-row">
                         <span class="table-data-heading">Курс</span>
-                        <p class="table-data">{{user.course | isUndefinedUserData}}</p>
+                        <p class="table-data">{{user.course | isNullOrIndefinedUserData}}</p>
                     </div>
                     <div class="data-row">
                         <span class="table-data-heading">Группа</span>
-                        <p class="table-data">{{user.group | isUndefinedUserData}}</p>
+                        <p class="table-data">{{user.group | isNullOrIndefinedUserData}}</p>
                     </div>
                 </div>
             </section>

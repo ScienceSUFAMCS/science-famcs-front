@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IsUndefinedUserDataPipe } from './is-undefined-user-data.pipe';
+import { IsNullOrIndefinedUserDataPipe } from './is-null-or-indefined-user-data.pipe';
 
 
 
 @NgModule({
-  declarations: [IsUndefinedUserDataPipe],
+  declarations: [IsNullOrIndefinedUserDataPipe],
   imports: [
     CommonModule
   ],
-  exports: [IsUndefinedUserDataPipe],
+  exports: [IsNullOrIndefinedUserDataPipe],
 })
 export class ScienceFamcsPipesModule { }
