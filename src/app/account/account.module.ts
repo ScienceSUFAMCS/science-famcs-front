@@ -11,11 +11,13 @@ import { TuiFieldErrorPipeModule } from '@taiga-ui/kit';
 import { TuiErrorModule } from '@taiga-ui/core';
 import { ProfileComponent } from './components/profile/profile.component';
 import { TuiTableModule } from '@taiga-ui/addon-table';
+import { IsUndefinedUserDataPipe } from './pipes/is-undefined-user-data.pipe';
 @NgModule({
   declarations: [
     AuthComponent,
     RegisterComponent,
-    ProfileComponent
+    ProfileComponent,
+    IsUndefinedUserDataPipe,
   ],
   imports: [
     CommonModule, 
