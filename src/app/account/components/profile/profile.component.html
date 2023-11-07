@@ -1,0 +1,67 @@
+<section class="profile">
+    <div class="profile_wrapper">
+        <div class="profile_container">
+            <section class="avatar-name_block">
+                <tui-avatar
+                    [text]="user.surname + ' ' + user.name"
+                    size="xl"
+                    [autoColor]="true"
+                    [rounded]="true"
+                >
+                </tui-avatar>
+                <div class="user-name-info_block">
+                    <p class="no-space_top tui-space_bottom-3 tui-text_h4">{{user.surname}} {{user.name}} {{user.patronymic}}</p>
+                    <span class="role">Роль: {{user.role}}</span>
+                </div>
+            </section>
+            <section class="main-info_block">
+                <div class="row">
+                    <p class="tui-text_h5 tui-space_right-1">Основное</p>
+                    <button tuiIconButton 
+                            size="xs" 
+                            icon="tuiIconEdit" 
+                            appearance="icon"
+                            (click)="onMainEditClick()"
+                            >
+                    </button>
+                </div>
+                <div class="info-content">
+                    <div class="data-row">
+                        <span class="table-data-heading">Почта</span>
+                        <p class="table-data">{{user.email | isNullOrUndefinedUserData}}</p>
+                    </div>
+                    <div class="data-row">
+                        <span class="table-data-heading">Телеграм</span>
+                        <p class="table-data">{{user.telegram | isNullOrUndefinedUserData}}</p>
+                    </div>
+                </div>
+            </section>
+            <section class="edditional-info_block">
+                <div class="row">
+                    <p class="tui-text_h5 tui-space_right-1">Дополнительно</p>
+                    <button tuiIconButton 
+                            size="xs" 
+                            icon="tuiIconEdit" 
+                            appearance="icon"
+                            (click)="onAdditionalClick()"
+                            >
+                    </button>
+                </div>
+                <div class="info-content">
+                    <div class="data-row">
+                        <span class="table-data-heading">Факультет</span>
+                        <p class="table-data">{{user.faculty | isNullOrUndefinedUserData}}</p>
+                    </div>
+                    <div class="data-row">
+                        <span class="table-data-heading">Курс</span>
+                        <p class="table-data">{{user.course | isNullOrUndefinedUserData}}</p>
+                    </div>
+                    <div class="data-row">
+                        <span class="table-data-heading">Группа</span>
+                        <p class="table-data">{{user.group | isNullOrUndefinedUserData}}</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</section>

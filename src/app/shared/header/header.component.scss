@@ -37,3 +37,28 @@ tui-app-bar {
 .space_left {
     @include tui-space(left, 3);
 }
+
+.block {
+    display: block;
+}
+.column-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tui-space__left-1 {
+    @include tui-space(left, 1);
+}
+
+.tui-space__right-1 {
+    @include tui-space(right, 1);
+}
+
+.tui-space__bottom-1 {
+    @include tui-space(bottom, 1);
+}
+
+.tui-space__top-1 {
+    @include tui-space(top, 1);
+}

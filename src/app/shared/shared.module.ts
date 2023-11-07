@@ -8,13 +8,15 @@ import { TuiLinkModule } from '@taiga-ui/core';
 import { SidebarComponent } from './header/sidebar/sidebar.component'
 import { TuiSidebarModule } from '@taiga-ui/addon-mobile';
 import { TuiActiveZoneModule } from '@taiga-ui/cdk';
-
+import { TuiDropdownModule } from '@taiga-ui/core';
+import { IsNullOrUndefinedUserDataPipe } from './pipes/is-null-or-undefined-user-data.pipe';
 
 @NgModule({
   declarations: [
     HeaderComponent,
     FooterComponent,
-    SidebarComponent
+    SidebarComponent,
+    IsNullOrUndefinedUserDataPipe,
   ],
   imports: [
     CommonModule,
@@ -25,11 +27,13 @@ import { TuiActiveZoneModule } from '@taiga-ui/cdk';
     TuiThemeNightModule,
     TuiModeModule,
     TuiSidebarModule,
-    TuiActiveZoneModule
+    TuiActiveZoneModule,
+    TuiDropdownModule,
   ],
   exports: [
     HeaderComponent,
-    FooterComponent
-  ]
+    FooterComponent,
+    IsNullOrUndefinedUserDataPipe,
+  ],
 })
 export class SharedModule { }
