@@ -1,0 +1,62 @@
+@import "@taiga-ui/core/styles/taiga-ui-local.scss";
+
+:host {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.avatar-name_block {
+    margin: 2rem 0 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 2rem;
+    row-gap: 2rem;
+    align-items: center;
+}
+
+.tui-space_bottom-3 {
+    @include tui-space('bottom', 3);
+}
+
+.no-space_top {
+    margin-top: 0;
+}
+
+.role {
+    font: var(--tui-font-text-m);
+    color: var(--tui-text-02);
+}
+
+.profile {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.table-data-heading {
+    width: 100px;
+    font: var(--tui-font-text-m);
+    font-size: 15px;
+    color: var(--tui-text-02);
+}
+
+.table-data {
+    font: var(--tui-font-text-m);
+    font-size: 15px;
+}
+
+.data-row {
+    width: 100%;
+    display: flex;
+    column-gap: 4px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+}
+
+.tui-space_right-1 {
+    @include tui-space('right', 1);
+}

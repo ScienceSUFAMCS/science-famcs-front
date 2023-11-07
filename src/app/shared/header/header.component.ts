@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ThemeService } from './service/theme.service';
 import { Router } from '@angular/router';
+import { UserInfoService } from '../service/user-info.service';
 
 @Component({
   selector: 'app-header',
@@ -9,8 +10,13 @@ import { Router } from '@angular/router';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderComponent {
-  constructor(private themeService : ThemeService, private router: Router) {
-
+  loggedIn : boolean;
+  
+  constructor(private themeService : ThemeService, 
+              private userInfoService : UserInfoService, 
+              private router: Router
+              ) {
+    this.loggedIn = userInfoService.isLoggedIn();
   }
 
   public getTheme() : string {
@@ -25,7 +31,20 @@ export class HeaderComponent {
     this.themeService.changeTheme();
   }
 
-  public onAccountClick() : void {
+  public onLoginClick() : void {
     this.router.navigate(['/account/login'])
+  }
+
+  public onRegisterClick() : void {
+    this.router.navigate(['/account/register']);
+  }
+
+  public onLogOutClick() : void {
+    this.userInfoService.logOut();
+    location.reload();
+  }
+
+  public onProfileClick() : void {
+    this.router.navigate(['/account/profile'])
   }
 }
