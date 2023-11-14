@@ -22,7 +22,7 @@
     </tui-filter>
 </form>
 
-<div id="sub" class="flexbox-wrap tui-space_top-6">
+<div *ngIf="resultTable === false" id="sub" class="flexbox-wrap tui-space_top-6">
     <button *ngFor="let subject of subjects; index as i" class="card tui-space_top-3"
         style.background="{{ colors[i % colors.length] }}">
         <h3 class="heading">{{ subject.name }}</h3>
@@ -30,25 +30,27 @@
     </button>
 </div>
 
-<button appearance="secondary" tuiButton type="button" icon="tuiIconArrowLeft" (click)="backClick()" size="s"
-    id="btnBack" class="tui-space_top-9 display-none">
-    Вернуться к списку предметов
-</button>
+<div *ngIf="resultTable === true">
+    <button appearance="secondary" tuiButton type="button" icon="tuiIconArrowLeft" (click)="backClick()" size="s"
+        id="btnBack" class="tui-space_top-9">
+        Вернуться к списку предметов
+    </button>
 
-<table id="result" class="tui-table tui-space_top-6 tui-space_left-3 display-none">
-    <tbody>
-        <tr>
-            <th class="tui-table__th tui-table__td_first">Название</th>
-            <th class="tui-table__th">Автор</th>
-            <th class="tui-table__th">Предмет</th>
-            <th class="tui-table__th tui-table__td_last">Тип</th>
-        </tr>
-        <tr *ngFor="let item of searchResult" (click)="openFileClick($event)" style="cursor: pointer"
-            class="tui-table__tr tui-table__tr_border_none">
-            <td class="tui-table__td tui-table__td_first">{{ item.name }}</td>
-            <td class="tui-table__td">{{ item.author }}</td>
-            <td class="tui-table__td">{{ item.subject }}</td>
-            <td class="tui-table__td tui-table__td_last">{{ item.type }}</td>
-        </tr>
-    </tbody>
-</table>
+    <table id="result" class="tui-table tui-space_top-6 tui-space_left-3">
+        <tbody>
+            <tr>
+                <th class="tui-table__th tui-table__td_first">Название</th>
+                <th class="tui-table__th">Автор</th>
+                <th class="tui-table__th">Предмет</th>
+                <th class="tui-table__th tui-table__td_last">Тип</th>
+            </tr>
+            <tr *ngFor="let item of searchResult" (click)="openFileClick($event)" style="cursor: pointer"
+                class="tui-table__tr tui-table__tr_border_none">
+                <td class="tui-table__td tui-table__td_first">{{ item.name }}</td>
+                <td class="tui-table__td">{{ item.author }}</td>
+                <td class="tui-table__td">{{ item.subject }}</td>
+                <td class="tui-table__td tui-table__td_last">{{ item.type }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, ContentChild, ElementRef, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { SearchDataService } from './service/search-data.service';
 import { QueryFile } from 'src/app/shared/interface/query-file.interface';
@@ -11,7 +11,7 @@ import { QueryFile } from 'src/app/shared/interface/query-file.interface';
   changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [SearchDataService]
 })
-export class SearchBunsComponent implements OnInit {
+export class SearchBunsComponent {
   subject = ''
   name = ''
   author = ''
@@ -29,8 +29,6 @@ export class SearchBunsComponent implements OnInit {
     author: new FormControl(),
     filters: new FormControl([])
   })
-
-  searchData: QueryFile[] = [];
 
   readonly subjects = [
     { name: 'ДМиМЛ', description: 'Дискретная математика и математическая логика' },
@@ -51,36 +49,20 @@ export class SearchBunsComponent implements OnInit {
   ]
 
   searchResult: QueryFile[] = [];
-  constructor(private searchDataService: SearchDataService) { }
-  ngOnInit() {
+  constructor(private searchDataService: SearchDataService) {
     this.searchResult = this.searchDataService.getData();
   }
 
+  resultTable = false;
+
   onSubmit(): void {
     console.log(this.searchForm.value)
-    
-    let subjectTable = document.getElementById('sub');
-    let btnBackToSubjects = document.getElementById('btnBack')
-    let searchResultTable = document.getElementById('result');
-
-    if (subjectTable != undefined) {
-      subjectTable.style.display = 'none';
-    }
-    btnBackToSubjects?.classList.remove('display-none');
-    searchResultTable?.classList.remove('display-none');
+    this.resultTable = true;
   }
 
-
   backClick(): void {
-    let subjectTable = document.getElementById('sub');
-    let btnBackToSubjects = document.getElementById('btnBack')
-    let searchResultTable = document.getElementById('result');
-
-    if (subjectTable != undefined) {
-      subjectTable.style.display = '';
-    }
-    btnBackToSubjects?.classList.add('display-none');
-    searchResultTable?.classList.add('display-none');
+    document.querySelector('form')?.reset();
+    this.resultTable = false;
   }
 
   openFileClick(event: any): void {
