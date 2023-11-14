@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { QueryFile } from 'src/app/shared/interface/query-file.interface';
+import { QueryFile } from 'src/app/shared/interfaces/query-file.interface';
 
 @Injectable({
   providedIn: 'root'

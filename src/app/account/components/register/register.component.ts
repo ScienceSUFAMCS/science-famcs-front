@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { TUI_VALIDATION_ERRORS } from '@taiga-ui/kit';
-import { SubmitFormService } from 'src/app/shared/service/submit-form.service';
+import { SubmitFormService } from 'src/app/shared/services/submit-form.service';
 import { matchValidator } from 'src/app/shared/validators/match.validator';
 
 @Component({

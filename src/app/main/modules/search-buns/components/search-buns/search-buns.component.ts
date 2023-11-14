@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { SearchDataService } from './service/search-data.service';
-import { QueryFile } from 'src/app/shared/interface/query-file.interface';
+import { QueryFile } from 'src/app/shared/interfaces/query-file.interface';
 
 
 @Component({

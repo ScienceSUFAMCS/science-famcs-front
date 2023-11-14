@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { ThemeService } from './service/theme.service';
+import { ThemeService } from './services/theme.service';
 import { Router } from '@angular/router';
-import { UserInfoService } from '../service/user-info.service';
+import { UserInfoService } from '../services/user-info.service';
 
 @Component({
   selector: 'app-header',
