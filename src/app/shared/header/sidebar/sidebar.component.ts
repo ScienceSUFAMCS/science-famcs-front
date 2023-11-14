@@ -9,7 +9,7 @@ export class SidebarComponent {
   open = false;
 
   readonly pages = [
-    { name: 'На главную', icon: 'tuiIconSmile', path: 'main/general' },
+    { name: 'На главную', icon: 'tuiIconHome', path: 'main/general' },
     { name: 'О нас', icon: 'tuiIconSmile', path: 'main/about' },
     { name: 'Плюшки', icon: 'tuiIconCoffee', path: 'main/search' },
     { name: 'Мероприятия', icon: 'tuiIconCalendar', path: 'main/event' },
