@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ThemeService {
-  private theme : string = 'tuiIconSunLarge';
+  private theme = 'tuiIconSunLarge';
   public readonly standartThemeIndex : number = 0;
   public readonly themes : string[] = ['tuiIconSunLarge', 'tuiIconMoonLarge'];
 
