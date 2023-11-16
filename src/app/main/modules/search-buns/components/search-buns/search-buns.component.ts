@@ -56,7 +56,6 @@ export class SearchBunsComponent {
   resultTable = false;
 
   onSubmit(): void {
-    console.log(this.searchForm.value)
     this.resultTable = true;
   }
 
