@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { SearchDataService } from './service/search-data.service';
 import { QueryFile } from 'src/app/shared/interface/query-file.interface';
@@ -30,8 +30,6 @@ export class SearchBunsComponent {
     filters: new FormControl([])
   })
 
-  searchData: QueryFile[] =[];
-  
   readonly subjects = [
     { name: 'ДМиМЛ', description: 'Дискретная математика и математическая логика' },
     { name: 'МО', description: 'Методы оптимизации' },
@@ -50,8 +48,24 @@ export class SearchBunsComponent {
     'var(--tui-support-14)'
   ]
 
-  onSubmit(): void {
-    console.log(this.searchForm.value)
+  searchResult: QueryFile[] = [];
+  constructor(private searchDataService: SearchDataService) {
+    this.searchResult = this.searchDataService.getData();
   }
 
+  resultTable = false;
+
+  onSubmit(): void {
+    this.resultTable = true;
+  }
+
+  backClick(): void {
+    document.querySelector('form')?.reset();
+    this.resultTable = false;
+  }
+
+  openFileClick(event: any): void {
+    alert(`Пока что мы не можем открыть "${event.currentTarget.cells.item(0).innerHTML
+      }" :(`);
+  }
 }

@@ -6,6 +6,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {TuiInputModule} from '@taiga-ui/kit';
 import {TuiGroupModule, TuiButtonModule, TuiSvgModule, TuiModeModule} from '@taiga-ui/core';
 import {TuiFilterModule} from '@taiga-ui/kit';
+import {TuiTableModule} from '@taiga-ui/addon-table';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import {TuiFilterModule} from '@taiga-ui/kit';
     TuiButtonModule,
     TuiFilterModule,
     TuiModeModule,
+    TuiTableModule,
   ]
 })
 export class SearchBunsModule { }
