@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { TUI_VALIDATION_ERRORS } from '@taiga-ui/kit';
-import { SubmitFormService } from 'src/app/shared/service/submit-form.service';
+import { SubmitFormService } from 'src/app/shared/services/submit-form.service';
 
 @Component({
   selector: 'app-auth',
