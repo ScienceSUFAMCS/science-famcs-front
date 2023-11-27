@@ -1,3 +1,5 @@
+$gap: 32px;
+
 #about-developers {
     width: 100%;
     text-align: center;
@@ -45,17 +47,17 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    column-gap: 60px;
-    row-gap: 60px;
+    column-gap: $gap;
+    row-gap: $gap;
 }
 
 .teamlead-container {
     display: flex;
-    column-gap: 60px;
+    column-gap: $gap;
     justify-content: center;
-    margin-bottom: 60px;
+    margin-bottom: $gap;
     flex-wrap: wrap;
-    row-gap: 60px;
+    row-gap: $gap;
 }
 
 .teamlead-color {
