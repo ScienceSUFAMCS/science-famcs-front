@@ -39,6 +39,10 @@ const routes: Routes = [
         loadChildren: () => import('./modules/archive/archive.module').then((m) => m.ArchiveModule),
       },
       {
+        path: 'about-developers',
+        loadChildren: () => import('./modules/about-developers/about-developers.module').then((m) => m.AboutDevelopersModule),
+      },
+      {
         path: '**',
         redirectTo: 'general',
       },
