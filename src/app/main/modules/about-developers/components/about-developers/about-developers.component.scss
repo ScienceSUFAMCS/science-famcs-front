@@ -67,3 +67,13 @@ $gap: 32px;
 .developer-color {
     background-color: rgba($color: #2fad96, $alpha: .1);
 }
+
+.no-bottom-space {
+    margin-bottom: 0;
+}
+
+.developer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
