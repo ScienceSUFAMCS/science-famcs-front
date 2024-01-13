@@ -1,0 +1,67 @@
+@import "@taiga-ui/core/styles/taiga-ui-local.scss";
+
+.wrapper {
+  display: flex;
+  margin: 2rem 0;
+}
+
+.name {
+  min-width: 13rem;
+  max-width: 13rem;
+}
+
+.startDate {
+  min-width: 8rem;
+  max-width: 8rem;
+}
+
+.endDate {
+  min-width: 8rem;
+  max-width: 8rem;
+}
+
+.description {
+  min-width: 30rem;
+  max-width: 30rem;
+  word-break: break-all;
+  white-space: normal;
+}
+
+td,
+th {
+  white-space: nowrap;
+  border-color: transparent;
+  border-right-color: var(--tui-base-04);
+
+  &:last-child {
+    border-right-color: transparent;
+  }
+}
+
+tbody {
+  border-color: transparent;
+}
+
+tr:nth-child(even) td {
+  background: var(--tui-base-02);
+}
+
+.alive,
+.deceased {
+  display: flex;
+  align-items: center;
+  text-transform: capitalize;
+
+  &:before {
+    content: "";
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 100%;
+    margin-right: 0.5rem;
+    background: var(--tui-base-04);
+  }
+}
+
+.alive:before {
+  background: var(--tui-success-fill);
+}

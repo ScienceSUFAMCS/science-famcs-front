@@ -1,1 +1,60 @@
-<p>Today is an event.</p>
+<div class="wrapper">
+  <tui-calendar
+    [maxViewedMonth]="firstMonth"
+    [month]="firstMonth"
+    [showAdjacent]="false"
+    [value]="value"
+    [(hoveredItem)]="hoveredItem"
+    (dayClick)="onDayClick($event)"
+    (monthChange)="onMonthChangeFirst($event)"
+  ></tui-calendar>
+  <tui-calendar
+    [maxViewedMonth]="middleMonth"
+    [minViewedMonth]="middleMonth"
+    [month]="middleMonth"
+    [showAdjacent]="false"
+    [value]="value"
+    [(hoveredItem)]="hoveredItem"
+    (dayClick)="onDayClick($event)"
+    (monthChange)="onMonthChangeMiddle($event)"
+  ></tui-calendar>
+  <tui-calendar
+    [minViewedMonth]="lastMonth"
+    [month]="lastMonth"
+    [showAdjacent]="false"
+    [value]="value"
+    [(hoveredItem)]="hoveredItem"
+    (dayClick)="onDayClick($event)"
+    (monthChange)="onMonthChangeLast($event)"
+  ></tui-calendar>
+</div>
+<div *ngIf="value">Chosen dates: {{ value }} <br /></div>
+
+<table tuiTable [columns]="columns">
+  <thead>
+    <tr tuiThGroup>
+      <th *tuiHead="'name'" class="name" tuiTh>Name</th>
+      <th *tuiHead="'startDate'" class="startDate" tuiTh>Start date</th>
+      <th *tuiHead="'endDate'" class="endDate" tuiTh>End date</th>
+      <th *tuiHead="'description'" class="description" tuiTh>Description</th>
+    </tr>
+  </thead>
+  <tbody
+    tuiTbody
+    *tuiLet="events | tuiTableSort as sortedEvents"
+    [data]="sortedEvents"
+  >
+    <tr *ngFor="let item of sortedEvents" tuiTr>
+      <td *tuiCell="'name'" class="name" tuiTd>{{ item.name }}</td>
+      <td *tuiCell="'startDate'" class="startDate" tuiTd>
+        {{ item.startDate }}
+      </td>
+      <td *tuiCell="'endDate'" class="endDate" tuiTd>
+        {{ item.endDate }}
+      </td>
+      <td *tuiCell="'description'" class="description" tuiTd>
+        {{ item.description }}
+      </td>
+    </tr>
+  </tbody>
+</table>

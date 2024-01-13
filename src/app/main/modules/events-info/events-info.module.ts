@@ -3,15 +3,18 @@ import { CommonModule } from '@angular/common';
 
 import { EventsInfoRoutingModule } from './events-info-routing.module';
 import { EventsComponent } from './components/events/events.component';
-
+import { TuiCalendarModule } from '@taiga-ui/core';
+import { TuiTableModule } from '@taiga-ui/addon-table';
+import { TuiLetModule } from '@taiga-ui/cdk';
 
 @NgModule({
-  declarations: [
-    EventsComponent
-  ],
+  declarations: [EventsComponent],
   imports: [
     CommonModule,
-    EventsInfoRoutingModule
-  ]
+    TuiCalendarModule,
+    EventsInfoRoutingModule,
+    TuiTableModule,
+    TuiLetModule,
+  ],
 })
-export class EventsInfoModule { }
+export class EventsInfoModule {}
