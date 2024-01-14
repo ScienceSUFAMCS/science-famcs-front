@@ -1,7 +1,15 @@
 @import "@taiga-ui/core/styles/taiga-ui-local.scss";
 
-.wrapper {
+.wrapper-for-calendars {
   display: flex;
+  margin: 2rem 0;
+}
+
+.button-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   margin: 2rem 0;
 }
 

@@ -4,6 +4,8 @@ import {
   GetEventsService,
   ScienceEvent,
 } from '../../services/get-events.service';
+import { TuiMarkerHandler } from '@taiga-ui/core';
+import { ONE_DOT } from 'src/app/shared/constants/event-dots';
 
 @Component({
   selector: 'app-events',
@@ -13,6 +15,8 @@ import {
 })
 export class EventsComponent {
   events: ScienceEvent[] = this.eventsService.getAllEvents();
+
+  selectedEvents: ScienceEvent[] = this.events;
 
   value: TuiDayRange | null = null;
 
@@ -24,9 +28,35 @@ export class EventsComponent {
 
   hoveredItem: TuiDay | null = null;
 
+  readonly markerHandler: TuiMarkerHandler = (day: TuiDay) => {
+    return this.events.some((event) =>
+      this.dateFilter(day, day, event.startDate, event.endDate)
+    )
+      ? ONE_DOT
+      : [];
+  };
+
   readonly columns = Object.keys(this.events[0]);
 
   constructor(private eventsService: GetEventsService) {}
+
+  private dateFilter(
+    from: TuiDay,
+    to: TuiDay,
+    filterFrom: TuiDay,
+    filterTo: TuiDay
+  ): boolean {
+    return (
+      (from <= filterFrom && filterFrom <= to) ||
+      (from <= filterTo && filterTo <= to) ||
+      (from >= filterFrom && to <= filterTo)
+    );
+  }
+
+  showAllEvents(): void {
+    this.selectedEvents = this.events;
+    this.value = null;
+  }
 
   onDayClick(day: TuiDay): void {
     if (this.value === null || !this.value.isSingleDay) {
@@ -34,6 +64,15 @@ export class EventsComponent {
     }
 
     this.value = TuiDayRange.sort(this.value.from, day);
+
+    this.selectedEvents = this.events.filter((event) => {
+      return this.dateFilter(
+        event.startDate,
+        event.endDate,
+        this.value?.from || event.startDate,
+        this.value?.to || event.endDate
+      );
+    });
   }
 
   onMonthChangeFirst(month: TuiMonth): void {

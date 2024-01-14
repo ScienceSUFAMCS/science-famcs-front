@@ -15,14 +15,14 @@ export class GetEventsService {
   private events: ScienceEvent[] = [
     {
       name: 'New Year',
-      startDate: new TuiDay(2024, 1, 1),
-      endDate: new TuiDay(2024, 1, 7),
+      startDate: new TuiDay(2024, 0, 1),
+      endDate: new TuiDay(2024, 0, 7),
       description: 'some info',
     },
     {
       name: 'Last Exam',
-      startDate: new TuiDay(2024, 1, 20),
-      endDate: new TuiDay(2024, 1, 20),
+      startDate: new TuiDay(2024, 0, 20),
+      endDate: new TuiDay(2024, 0, 20),
       description: `some large info sdfkshdkjfhjkshgjkshfgdsghds
        sdfgh shsdfh ghsdfjk ghsjdfg hjkdsf ghjkdshfgjhds 
        dshk dh kh djfd shjkgdh sdfg  dsjf sd fkg shdsf 
@@ -30,14 +30,14 @@ export class GetEventsService {
     },
     {
       name: 'Preparing',
-      startDate: new TuiDay(2024, 1, 20),
-      endDate: new TuiDay(2024, 2, 1),
+      startDate: new TuiDay(2024, 0, 20),
+      endDate: new TuiDay(2024, 1, 1),
       description: 'some info sdafsd f',
     },
     {
       name: 'Big event',
-      startDate: new TuiDay(2024, 2, 1),
-      endDate: new TuiDay(2024, 3, 7),
+      startDate: new TuiDay(2024, 1, 1),
+      endDate: new TuiDay(2024, 2, 7),
       description: 'some little info',
     },
   ];

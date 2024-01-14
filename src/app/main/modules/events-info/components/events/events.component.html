@@ -1,4 +1,4 @@
-<div class="wrapper">
+<div class="wrapper-for-calendars">
   <tui-calendar
     [maxViewedMonth]="firstMonth"
     [month]="firstMonth"
@@ -7,6 +7,7 @@
     [(hoveredItem)]="hoveredItem"
     (dayClick)="onDayClick($event)"
     (monthChange)="onMonthChangeFirst($event)"
+    [markerHandler]="markerHandler"
   ></tui-calendar>
   <tui-calendar
     [maxViewedMonth]="middleMonth"
@@ -17,6 +18,7 @@
     [(hoveredItem)]="hoveredItem"
     (dayClick)="onDayClick($event)"
     (monthChange)="onMonthChangeMiddle($event)"
+    [markerHandler]="markerHandler"
   ></tui-calendar>
   <tui-calendar
     [minViewedMonth]="lastMonth"
@@ -26,22 +28,38 @@
     [(hoveredItem)]="hoveredItem"
     (dayClick)="onDayClick($event)"
     (monthChange)="onMonthChangeLast($event)"
+    [markerHandler]="markerHandler"
   ></tui-calendar>
 </div>
-<div *ngIf="value">Chosen dates: {{ value }} <br /></div>
 
-<table tuiTable [columns]="columns">
+<div class="button-wrapper">
+  <div *ngIf="value">Выбранные даты: {{ value }} <br /></div>
+  <button
+    tuiButton
+    type="button"
+    class="tui-space_right-3 tui-space_bottom-3"
+    (click)="showAllEvents()"
+  >
+    Показать все мероприятия
+  </button>
+</div>
+
+<table
+  tuiTable
+  [columns]="columns"
+  *ngIf="selectedEvents.length > 0; else selectedIsEmpty"
+>
   <thead>
     <tr tuiThGroup>
-      <th *tuiHead="'name'" class="name" tuiTh>Name</th>
-      <th *tuiHead="'startDate'" class="startDate" tuiTh>Start date</th>
-      <th *tuiHead="'endDate'" class="endDate" tuiTh>End date</th>
-      <th *tuiHead="'description'" class="description" tuiTh>Description</th>
+      <th *tuiHead="'name'" class="name" tuiTh>Название</th>
+      <th *tuiHead="'startDate'" class="startDate" tuiTh>Дата начала</th>
+      <th *tuiHead="'endDate'" class="endDate" tuiTh>Дата конца</th>
+      <th *tuiHead="'description'" class="description" tuiTh>Описание</th>
     </tr>
   </thead>
   <tbody
     tuiTbody
-    *tuiLet="events | tuiTableSort as sortedEvents"
+    *tuiLet="selectedEvents | tuiTableSort as sortedEvents"
     [data]="sortedEvents"
   >
     <tr *ngFor="let item of sortedEvents" tuiTr>
@@ -58,3 +76,4 @@
     </tr>
   </tbody>
 </table>
+<ng-template #selectedIsEmpty> Мероприятий в данный период нет. </ng-template>
