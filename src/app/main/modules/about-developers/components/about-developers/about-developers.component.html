@@ -1,158 +1,80 @@
 <section id="about-developers">
     <h2 class="tui-text_h3">Разработчики сайта</h2>
     <div class="teamlead-container">
-        <div class="developer teamlead-color">
-            <img src="../../../../../../assets/images/developers photoes/Eugeni.jpg" alt="Eugeniy Shevtsov's photo" class="developer-photo">
-            <h3 class="tui-text_h5 after" text="AKA Женя Рысь">
-                Евгений<br>Шевцов
-            </h3>
-            <h4 class="tui-text_h6 no-bottom-space">Frontend тимлид</h4>
-            <div class="developer-links">
-                <button
-                    tuiIconButton
-                    appearance="icon"
-                    icon="tuiIconGithub"
-                    data-href="https://github.com/PblCbGomel"
-                    (click)="onLinkButtonClick($event)"
-                >
-                </button>
-                <button
-                    tuiIconButton
-                    appearance="icon"
-                    icon="tuiIconLinkedin"
-                    data-href="https://www.linkedin.com/in/evgeniy-shevtsov-8a9091236"
-                    (click)="onLinkButtonClick($event)"
-                >
-                </button>
-            </div>
-        </div>
-        <div class="developer teamlead-color">
-            <img src="../../../../../../assets/images/developers photoes/Ann.jpg" alt="Ann Osipchuk's photo" class="developer-photo">
-            <h3 class="tui-text_h5">
-                Анна<br>Осипчик
-            </h3>
-            <h4 class="tui-text_h6 no-bottom-space">Backend тимлид</h4>
-            <div class="developer-links">
-                <button
-                    tuiIconButton
-                    appearance="icon"
-                    icon="tuiIconInstagram"
-                    data-href="https://www.instagram.com/a_osipchik"
-                    (click)="onLinkButtonClick($event)"
-                >
-                </button>
-                
-            </div>
-        </div>
+        <app-developer-card
+            firstName="Евгений"
+            lastName="Шевцов"
+            photoURL="../../../../../../assets/images/developers photoes/Eugeni.jpg"
+            developerType="teamlead"
+            subtext="AKA Женя Рысь"
+            role="Frontend тимлид"
+            [developerLinks]="[
+                ['tuiIconGithub', 'https://github.com/PblCbGomel'],
+                ['tuiIconLinkedin', 'https://www.linkedin.com/in/evgeniy-shevtsov-8a9091236']
+            ]"
+        >
+        </app-developer-card>
+        <app-developer-card
+            firstName="Анна"
+            lastName="Осипчик"
+            photoURL="../../../../../../assets/images/developers photoes/Ann.jpg"
+            developerType="teamlead"
+            role="Backend тимлид"
+            [developerLinks]="[
+                ['tuiIconInstagram', 'https://www.instagram.com/a_osipchik'],
+            ]"
+        >
+        </app-developer-card>
     </div>
     <div class="developers-container">
-        <div class="developer developer-color">
-            <img src="../../../../../../assets/images/developers photoes/StanislauZaitsau.jpg" alt="Stanislau Zaitsau's photo" class="developer-photo">
-            <h3 class="tui-text_h5">
-                Станислав<br>Зайцев
-            </h3>
-            <h4 class="tui-text_h6 no-bottom-space">Frontend разработчик</h4>
-            <div class="developer-links">
-                <button
-                    tuiIconButton
-                    appearance="icon"
-                    icon="tuiIconGithub"
-                    data-href="https://github.com/KrollikRoddzer"
-                    (click)="onLinkButtonClick($event)"
-                >
-                </button>
-                <button
-                    tuiIconButton
-                    appearance="icon"
-                    icon="tuiIconLinkedin"
-                    data-href="https://www.linkedin.com/in/krollikroddzer"
-                    (click)="onLinkButtonClick($event)"
-                >
-                </button>
-            </div>
-        </div>
-        <div class="developer developer-color">
-            <img src="../../../../../../assets/images/developers photoes/Sasha.jpg" alt="Sasha Yakusheva's photo" class="developer-photo">
-            <h3 class="tui-text_h5">
-                Александра<br>Якушева
-            </h3>
-            <h4 class="tui-text_h6 no-bottom-space">Frontend разработчик</h4>
-            <div class="developer-links">
-                <button
-                    tuiIconButton
-                    appearance="icon"
-                    icon="tuiIconGithub"
-                    data-href="https://github.com/sashayyy"
-                    (click)="onLinkButtonClick($event)"
-                >
-                </button>
-                <button
-                    tuiIconButton
-                    appearance="icon"
-                    icon="tuiIconLinkedin"
-                    data-href="https://www.linkedin.com/in/sasha-yakusheva-31a80528b/"
-                    (click)="onLinkButtonClick($event)"
-                >
-                </button>
-                <button
-                    tuiIconButton
-                    appearance="icon"
-                    icon="tuiIconInstagram"
-                    data-href="https://www.instagram.com/whiskasdlyakotyat"
-                    (click)="onLinkButtonClick($event)"
-                >
-                </button>
-            </div>
-        </div>
-        <div class="developer developer-color">
-            <img src="../../../../../../assets/images/developers photoes/Yan.jpg" alt="Yan Tolstoy's photo" class="developer-photo">
-            <h3 class="tui-text_h5">
-                Ян<br>Толстой
-            </h3>
-            <h4 class="tui-text_h6 no-bottom-space">Backend разработчик</h4>
-            <div class="developer-links">
-                <button
-                    tuiIconButton
-                    appearance="icon"
-                    icon="tuiIconGithub"
-                    data-href="https://github.com/yanomaly"
-                    (click)="onLinkButtonClick($event)"
-                >
-                </button>
-                <button
-                    tuiIconButton
-                    appearance="icon"
-                    icon="tuiIconLinkedin"
-                    data-href="https://www.linkedin.com/in/yanomaly/"
-                    (click)="onLinkButtonClick($event)"
-                >
-                </button>
-            </div>
-        </div>
-        <div class="developer developer-color">
-            <img src="../../../../../../assets/images/developers photoes/Sergei.jpg" alt="Sergei Gincharov's photo" class="developer-photo">
-            <h3 class="tui-text_h5">
-                Сергей<br>Гончаров
-            </h3>
-            <h4 class="tui-text_h6 no-bottom-space">Backend разработчик</h4>
-            <div class="developer-links">
-                <button
-                    tuiIconButton
-                    appearance="icon"
-                    icon="tuiIconGithub"
-                    data-href="https://github.com/redfox193"
-                    (click)="onLinkButtonClick($event)"
-                >
-                </button>
-                <button
-                    tuiIconButton
-                    appearance="icon"
-                    icon="tuiIconLinkedin"
-                    data-href="https://www.linkedin.com/in/sergei-goncharov-redfox193/"
-                    (click)="onLinkButtonClick($event)"
-                >
-                </button>
-            </div>
-        </div>
+        <app-developer-card
+            firstName="Станислав"
+            lastName="Зайцев"
+            photoURL="../../../../../../assets/images/developers photoes/StanislauZaitsau.jpg"
+            developerType="developer"
+            role="Frontend разработчик"
+            [developerLinks]="[
+                ['tuiIconGithub', 'https://github.com/KrollikRoddzer'],
+                ['tuiIconLinkedin', 'https://www.linkedin.com/in/krollikroddzer'],
+            ]"
+        >
+        </app-developer-card>
+        <app-developer-card
+            firstName="Александра"
+            lastName="Якушева"
+            photoURL="../../../../../../assets/images/developers photoes/Sasha.jpg"
+            developerType="developer"
+            role="Frontend разработчик"
+            [developerLinks]="[
+                ['tuiIconGithub', 'https://github.com/sashayyy'],
+                ['tuiIconLinkedin', 'https://www.linkedin.com/in/sasha-yakusheva-31a80528b'],
+                ['tuiIconInstagram', 'https://www.instagram.com/whiskasdlyakotyat'],
+            ]"
+        >
+        </app-developer-card>
+        <app-developer-card
+            firstName="Ян"
+            lastName="Толстой"
+            photoURL="../../../../../../assets/images/developers photoes/Yan.jpg"
+            developerType="developer"
+            role="Backend разработчик"
+            [developerLinks]="[
+                ['tuiIconGithub', 'https://github.com/yanomaly'],
+                ['tuiIconLinkedin', 'https://www.linkedin.com/in/yanomaly/'],
+            ]"
+        >
+        </app-developer-card>
+        <app-developer-card
+            firstName="Сергей"
+            lastName="Гончар"
+            photoURL="../../../../../../assets/images/developers photoes/Sergei.jpg"
+            developerType="developer"
+            role="Backend разработчик"
+            [developerLinks]="[
+                ['tuiIconGithub', 'https://github.com/redfox193'],
+                ['tuiIconLinkedin', 'https://www.linkedin.com/in/sergei-goncharov-redfox193/'],
+            ]"
+        >
+        </app-developer-card>
     </div>
 </section>

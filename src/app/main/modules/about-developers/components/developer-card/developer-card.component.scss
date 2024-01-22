@@ -1,0 +1,55 @@
+$gap: 32px;
+
+.developer {
+    width: 250px;
+    padding: 30px;
+    // border: 1px solid var(--tui-text-03);
+    border-radius: 60px;
+    text-align: center;
+    transition: 0.3s ease-out;
+
+    box-shadow: 4px 4px 4px 0 rgba($color: #000000, $alpha: 0.2);
+}
+
+.developer:hover {
+    scale: 1.05;
+}
+
+.developer-photo {
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+}
+
+
+.after {
+    position: relative;
+
+    &::after {
+        content: attr(text);
+        position: absolute;
+        bottom: -14px;
+        left: 50%;
+        transform: translateX(-50%);
+        font: var(--tui-font-text-xs);
+        color: var(--tui-text-03);
+    }
+}
+
+.teamlead-color {
+    background-color: rgba($color: #3682db, $alpha: 0.1);
+}
+
+.developer-color {
+    background-color: rgba($color: #2fad96, $alpha: .1);
+}
+
+.no-bottom-space {
+    margin-bottom: 0;
+}
+
+.developer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}

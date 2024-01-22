@@ -1,0 +1,1 @@
+export type DeveloperLinkType = 'tuiIconGithub' | 'tuiIconInstagram' | 'tuiIconLinkedin'

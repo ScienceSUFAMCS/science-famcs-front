@@ -1,0 +1,19 @@
+<div [ngClass]="'developer ' + developerType.concat('-color')">
+    <img [src]="photoURL" alt="Eugeniy Shevtsov's photo" class="developer-photo">
+    <h3 class="tui-text_h5 after" [attr.text]="!!subtext ? subtext : ''">
+        {{firstName}} <br> {{lastName}}
+    </h3>
+    <h4 class="tui-text_h6 no-bottom-space">{{role}}</h4>
+    <div class="developer-links">
+        <ng-container *ngFor="let item of developerLinks">
+            <button
+                tuiIconButton
+                appearance="icon"
+                [icon]="item[0]"
+                [attr.data-href]="item[1]"
+                (click)="onLinkButtonClick($event)"
+                >
+            </button>
+        </ng-container>
+    </div>
+</div>
