@@ -11,12 +11,21 @@ import { PolymorpheusContent } from '@tinkoff/ng-polymorpheus';
   providers: [AdditionalClassesService]
 })
 export class AdditionalClassesComponent {
+  indexOfSubject = 0;
+  defaultImage = 'https://teach.com/wp-content/uploads/sites/56/2021/07/8255_Hero.jpg';
+
+  colors = [
+    'var(--tui-support-01)',
+    'var(--tui-support-11)',
+    'var(--tui-support-09)',
+    'var(--tui-support-19)',
+    'var(--tui-support-17)'
+  ]
+
   classes: ExtraClass[] = [];
   constructor(private additionalClassesService: AdditionalClassesService, @Inject(TuiDialogService) private readonly dialogs: TuiDialogService) {
     this.classes = this.additionalClassesService.getData();
   }
-
-  indexOfSubject = 0
 
   onClick(
     content: PolymorpheusContent<TuiDialogContext>,
@@ -33,14 +42,4 @@ export class AdditionalClassesComponent {
       })
       .subscribe();
   }
-
-  colors = [
-    'var(--tui-support-01)',
-    'var(--tui-support-11)',
-    'var(--tui-support-09)',
-    'var(--tui-support-19)',
-    'var(--tui-support-17)'
-  ]
-
-  defaultImage = 'https://teach.com/wp-content/uploads/sites/56/2021/07/8255_Hero.jpg'
 }
