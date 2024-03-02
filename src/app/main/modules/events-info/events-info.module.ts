@@ -6,12 +6,10 @@ import { EventsComponent } from './components/events/events.component';
 
 
 @NgModule({
-  declarations: [
-    EventsComponent
-  ],
+  declarations: [EventsComponent],
   imports: [
     CommonModule,
-    EventsInfoRoutingModule
-  ]
+    EventsInfoRoutingModule,
+  ],
 })
-export class EventsInfoModule { }
+export class EventsInfoModule {}

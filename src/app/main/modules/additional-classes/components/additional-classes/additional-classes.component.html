@@ -1,1 +1,49 @@
-<p>On friday we have additional classes.</p>
+<h2 class="tui-text_h2 tui-space_top-9">Занятия</h2>
+<p class="tui-text_body-xl tui-space_top-6">
+    Наши ребята проводят дополнительные занятия по разным дисциплинам на ФПМИ.
+</p>
+
+<div class="flex-container tui-space_top-6">
+    <a *ngFor="let class of classes; index as i" rel="noreferrer" size="l" target="_blank" tuiIsland [hoverable]="true"
+        style.background="{{ colors[i % colors.length] }}" href="#"
+        (click)="onClick(content, header, 'm', i); $event.preventDefault()" class="flex-container_item">
+        <div class="tui-island__content">
+            <div>
+                <h3 class="tui-island__title">{{ class.subject }}</h3>
+                <p class="tui-island__paragraph">
+                    {{ class.description }}
+                </p>
+            </div>
+            <div class="">
+                <a tuiLink>
+                    Подробнее
+                </a>
+            </div>
+        </div>
+    </a>
+</div>
+
+<ng-template #content let-observer>
+    <p>
+        <span>Преподаватель: </span>{{ classes[indexOfSubject].teacher }}
+    </p>
+    <p>
+        {{ classes[indexOfSubject].info }}
+    </p>
+    <a tuiLink href="{{ classes[indexOfSubject].group_chat }}" rel="noreferrer" size="l" target="_blank"
+        icon="tuiIconMessageCircle" iconAlign="left">
+        Ссылка на беседу
+    </a>
+    <div class="buttons">
+        <button size="m" tuiButton type="button" appearance="secondary" icon="tuiIconArrowLeft"
+            (click)="observer.complete()">
+            Вернуться к списку занятий
+        </button>
+    </div>
+</ng-template>
+
+<ng-template #header>
+    <div class="header">
+        <img alt="Cool" src="{{ classes[indexOfSubject].image || defaultImage }}" width="100%" />
+    </div>
+</ng-template>
