@@ -1,4 +1,11 @@
 import { Component } from '@angular/core';
+import { TuiDay, TuiDayRange, TuiMonth } from '@taiga-ui/cdk';
+import {
+  GetEventsService,
+  ScienceEvent,
+} from '../../services/get-events.service';
+import { TuiMarkerHandler } from '@taiga-ui/core';
+import { ONE_DOT } from 'src/app/shared/constants/event-dots';
 
 @Component({
   selector: 'app-events',
