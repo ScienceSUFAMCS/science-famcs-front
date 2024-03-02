@@ -33,7 +33,9 @@
 </div>
 
 <div class="button-wrapper">
-  <div *ngIf="value">Выбранные даты: {{ value }} <br /></div>
+  <div *ngIf="value" class="selected-date-text">
+    Выбранные даты: {{ value }} <br />
+  </div>
   <button
     tuiButton
     type="button"
@@ -44,36 +46,21 @@
   </button>
 </div>
 
-<table
-  tuiTable
-  [columns]="columns"
+<div
+  class="island-wrapper"
   *ngIf="selectedEvents.length > 0; else selectedIsEmpty"
 >
-  <thead>
-    <tr tuiThGroup>
-      <th *tuiHead="'name'" class="name" tuiTh>Название</th>
-      <th *tuiHead="'startDate'" class="startDate" tuiTh>Дата начала</th>
-      <th *tuiHead="'endDate'" class="endDate" tuiTh>Дата конца</th>
-      <th *tuiHead="'description'" class="description" tuiTh>Описание</th>
-    </tr>
-  </thead>
-  <tbody
-    tuiTbody
-    *tuiLet="selectedEvents | tuiTableSort as sortedEvents"
-    [data]="sortedEvents"
-  >
-    <tr *ngFor="let item of sortedEvents" tuiTr>
-      <td *tuiCell="'name'" class="name" tuiTd>{{ item.name }}</td>
-      <td *tuiCell="'startDate'" class="startDate" tuiTd>
-        {{ item.startDate }}
-      </td>
-      <td *tuiCell="'endDate'" class="endDate" tuiTd>
-        {{ item.endDate }}
-      </td>
-      <td *tuiCell="'description'" class="description" tuiTd>
-        {{ item.description }}
-      </td>
-    </tr>
-  </tbody>
-</table>
-<ng-template #selectedIsEmpty> Мероприятий в данный период нет. </ng-template>
+  <tui-island *ngFor="let event of selectedEvents" class="event-island">
+    <p class="tui-island__category">
+      {{ getTuiRange(event.endDate, event.startDate) }}
+    </p>
+    <h3 class="tui-island__title">{{ event.name }}</h3>
+    <p class="tui-island__paragraph">{{ event.description }}</p>
+    <p class="tui-island__paragraph tui-island__paragraph_link">
+      <a href="{{ event.link }}" tuiLink> Подробнее </a>
+    </p>
+  </tui-island>
+</div>
+<ng-template #selectedIsEmpty>
+  <h2 class="selected-is-empty">Мероприятий в данный период нет.</h2>
+</ng-template>

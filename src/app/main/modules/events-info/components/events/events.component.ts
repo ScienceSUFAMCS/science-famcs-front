@@ -53,6 +53,13 @@ export class EventsComponent {
     );
   }
 
+  getTuiRange(startDate: TuiDay, endDate: TuiDay): TuiDayRange | TuiDay {
+    if (startDate.day === endDate.day) {
+      return startDate;
+    }
+    return new TuiDayRange(endDate, startDate);
+  }
+
   showAllEvents(): void {
     this.selectedEvents = this.events;
     this.value = null;

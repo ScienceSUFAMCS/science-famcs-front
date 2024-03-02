@@ -3,9 +3,14 @@ import { CommonModule } from '@angular/common';
 
 import { EventsInfoRoutingModule } from './events-info-routing.module';
 import { EventsComponent } from './components/events/events.component';
-import { TuiButtonModule, TuiCalendarModule } from '@taiga-ui/core';
+import {
+  TuiButtonModule,
+  TuiCalendarModule,
+  TuiLinkModule,
+} from '@taiga-ui/core';
 import { TuiTableModule } from '@taiga-ui/addon-table';
 import { TuiLetModule } from '@taiga-ui/cdk';
+import { TuiIslandModule } from '@taiga-ui/kit';
 
 @NgModule({
   declarations: [EventsComponent],
@@ -16,6 +21,8 @@ import { TuiLetModule } from '@taiga-ui/cdk';
     TuiTableModule,
     TuiLetModule,
     TuiButtonModule,
+    TuiIslandModule,
+    TuiLinkModule,
   ],
 })
 export class EventsInfoModule {}

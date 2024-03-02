@@ -2,7 +2,8 @@
 
 .wrapper-for-calendars {
   display: flex;
-  margin: 2rem 0;
+  justify-content: center;
+  margin: 2rem 0 0;
 }
 
 .button-wrapper {
@@ -10,7 +11,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin: 2rem 0;
+  margin: 0;
 }
 
 .name {
@@ -35,41 +36,27 @@
   white-space: normal;
 }
 
-td,
-th {
-  white-space: nowrap;
-  border-color: transparent;
-  border-right-color: var(--tui-base-04);
-
-  &:last-child {
-    border-right-color: transparent;
-  }
+.selected-date-text {
+  color: var(--tui-text-02);
+  font-size: 1rem;
+  margin: 0 0 0.5rem;
 }
 
-tbody {
-  border-color: transparent;
+.selected-is-empty {
+  text-align: center;
+  color: var(--tui-negative);
 }
 
-tr:nth-child(even) td {
-  background: var(--tui-base-02);
-}
-
-.alive,
-.deceased {
+.island-wrapper {
   display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
   align-items: center;
-  text-transform: capitalize;
-
-  &:before {
-    content: "";
-    width: 0.5rem;
-    height: 0.5rem;
-    border-radius: 100%;
-    margin-right: 0.5rem;
-    background: var(--tui-base-04);
-  }
+  justify-content: center;
 }
 
-.alive:before {
-  background: var(--tui-success-fill);
+.event-island {
+  width: 25rem;
+  min-height: 12rem;
+  background-color: var(--tui-secondary);
 }
