@@ -16,7 +16,6 @@ import { TuiIslandModule } from '@taiga-ui/kit';
   declarations: [EventsComponent],
   imports: [
     CommonModule,
-    TuiCalendarModule,
     EventsInfoRoutingModule,
     TuiTableModule,
     TuiLetModule,

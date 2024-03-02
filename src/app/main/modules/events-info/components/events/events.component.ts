@@ -1,17 +1,9 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { TuiDay, TuiDayRange, TuiMonth } from '@taiga-ui/cdk';
-import {
-  GetEventsService,
-  ScienceEvent,
-} from '../../services/get-events.service';
-import { TuiMarkerHandler } from '@taiga-ui/core';
-import { ONE_DOT } from 'src/app/shared/constants/event-dots';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-events',
   templateUrl: './events.component.html',
   styleUrls: ['./events.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class EventsComponent {
   events: ScienceEvent[] = this.eventsService.getAllEvents();
