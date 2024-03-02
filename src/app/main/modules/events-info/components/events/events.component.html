@@ -1,1 +1,66 @@
-<p>Today is an event.</p>
+<div class="wrapper-for-calendars">
+  <tui-calendar
+    [maxViewedMonth]="firstMonth"
+    [month]="firstMonth"
+    [showAdjacent]="false"
+    [value]="value"
+    [(hoveredItem)]="hoveredItem"
+    (dayClick)="onDayClick($event)"
+    (monthChange)="onMonthChangeFirst($event)"
+    [markerHandler]="markerHandler"
+  ></tui-calendar>
+  <tui-calendar
+    [maxViewedMonth]="middleMonth"
+    [minViewedMonth]="middleMonth"
+    [month]="middleMonth"
+    [showAdjacent]="false"
+    [value]="value"
+    [(hoveredItem)]="hoveredItem"
+    (dayClick)="onDayClick($event)"
+    (monthChange)="onMonthChangeMiddle($event)"
+    [markerHandler]="markerHandler"
+  ></tui-calendar>
+  <tui-calendar
+    [minViewedMonth]="lastMonth"
+    [month]="lastMonth"
+    [showAdjacent]="false"
+    [value]="value"
+    [(hoveredItem)]="hoveredItem"
+    (dayClick)="onDayClick($event)"
+    (monthChange)="onMonthChangeLast($event)"
+    [markerHandler]="markerHandler"
+  ></tui-calendar>
+</div>
+
+<div class="button-wrapper">
+  <div *ngIf="value" class="selected-date-text">
+    Выбранные даты: {{ value }} <br />
+  </div>
+  <button
+    tuiButton
+    type="button"
+    class="tui-space_right-3 tui-space_bottom-3"
+    (click)="showAllEvents()"
+  >
+    Показать все мероприятия
+  </button>
+</div>
+
+<div
+  class="island-wrapper"
+  *ngIf="selectedEvents.length > 0; else selectedIsEmpty"
+>
+  <tui-island *ngFor="let event of selectedEvents" class="event-island">
+    <p class="tui-island__category">
+      {{ getTuiRange(event.endDate, event.startDate) }}
+    </p>
+    <h3 class="tui-island__title">{{ event.name }}</h3>
+    <p class="tui-island__paragraph">{{ event.description }}</p>
+    <p class="tui-island__paragraph tui-island__paragraph_link">
+      <a href="{{ event.link }}" tuiLink> Подробнее </a>
+    </p>
+  </tui-island>
+</div>
+<ng-template #selectedIsEmpty>
+  <h2 class="selected-is-empty">Мероприятий в данный период нет.</h2>
+</ng-template>
