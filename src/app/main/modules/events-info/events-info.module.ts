@@ -17,6 +17,7 @@ import { TuiIslandModule } from '@taiga-ui/kit';
   imports: [
     CommonModule,
     EventsInfoRoutingModule,
+    TuiCalendarModule,
     TuiTableModule,
     TuiLetModule,
     TuiButtonModule,
